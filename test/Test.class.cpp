@@ -4,6 +4,9 @@
 Test::Test(void)
 {
 	std::cout << "Build :)" << std::endl;
+	this->foo = 42;
+	std::cout << "I'm " << this->foo << "!!!" << std::endl;
+	this->ft_foo();
 	return;
 }
 
