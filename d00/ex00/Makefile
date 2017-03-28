@@ -1,3 +1,5 @@
+.PHONY: all clean fclean re
+
 CC = clang++
 FLAGS = -Wall -Wextra -Werror
 NAME = megaphone
