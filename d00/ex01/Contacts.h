@@ -5,6 +5,8 @@
 
 class Contacts {
 public:
+	Contacts( void );
+	~Contacts( void );
 	const std::string	first_name;
 	const std::string	last_name;
 	const std::string	nickname;

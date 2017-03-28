@@ -8,19 +8,21 @@
 
 // using namespace std;
 
+
+
 int			main( void )
 {
 	std::string	instruct;
 	bool		exit_phoneBook = true;
 
+	std::cout << "================================== PhoneBook ===================================" << std::endl;
 	do
 	{
 		// Display the menu
-		std::cout << "PhoneBook" << std::endl;
-		std::cout << "\tCommands:" << std::endl;
-		std::cout << "\t\tADD: add a new friend" << std::endl;
-		std::cout << "\t\tSEARCH: search a friend" << std::endl;
-		std::cout << "\t\tEXIT: bye bye!" << std::endl;
+		std::cout << "Commands:" << std::endl;
+		std::cout << "\tADD: add a new friend" << std::endl;
+		std::cout << "\tSEARCH: search a friend" << std::endl;
+		std::cout << "\tEXIT: bye bye!" << std::endl;
 		std::cout << "What do you wan't to do?" << std::endl;
 		// Wait for instruction
 		std::cin >> instruct;
@@ -28,6 +30,7 @@ int			main( void )
 		// Check instruction
 		if (instruct.compare("ADD") == 0)
 		{
+
 			std::cout << "ADD WIP" << std::endl;
 		}
 		else if (instruct.compare("SEARCH") == 0)

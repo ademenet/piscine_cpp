@@ -1,2 +1,1 @@
-# piscine_cpp
-Exercices from the C++ "piscine"
+# Learning C++ 11
