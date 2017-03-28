@@ -4,18 +4,18 @@ FLAGS = -Wall -Wextra -Werror
 
 NAME = phonebook
 
-SRC_NAME = main.cpp
+SRC = main.cpp
 
-OBJ_NAME = $(SRC_NAME:.c=.o)
+OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(FLAGS) -c $(SRC_NAME)
-	$(CC) $(FLAGS) $(OBJ_NAME) -o $(NAME)
+	$(CC) $(FLAGS) -c $(SRC)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
-clean:
-	rm -rf $(OBJ_NAME)
+clean: $(OBJ)
+	rm -rf $(OBJ)
 
 fclean: clean
 	rm -rf $(NAME)
