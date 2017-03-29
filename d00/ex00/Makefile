@@ -1,7 +1,7 @@
 .PHONY: all clean fclean re
 
 CC = clang++
-FLAGS = -Wall -Wextra -Werror -std=c++11
+FLAGS = -Wall -Wextra -Werror
 NAME = megaphone
 
 all: $(NAME)
