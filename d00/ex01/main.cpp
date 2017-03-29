@@ -1,37 +1,35 @@
-#include <iostream>
-#include <string>
-// #include "Contacts.h"
+#include "Contact.h"
 
 // TODO EXIT
-// TODO ADD
+// DONE ADD :
+// TODO ADD petit bug de retour a la ligne direct
 // TODO SEARCH
 
-// using namespace std;
-
-
-
-int			main( void )
+int					main( void )
 {
-	std::string	instruct;
-	bool		exit_phoneBook = true;
+	std::string		instruct;
+	bool			exit_phoneBook = true;
+	Contact			contacts[8];
+	int				i = 0;
 
 	std::cout << "================================== PhoneBook ===================================" << std::endl;
 	do
 	{
 		// Display the menu
 		std::cout << "Commands:" << std::endl;
-		std::cout << "\tADD: add a new friend" << std::endl;
-		std::cout << "\tSEARCH: search a friend" << std::endl;
-		std::cout << "\tEXIT: bye bye!" << std::endl;
+		std::cout << "ADD: add a new friend" << std::endl;
+		std::cout << "SEARCH: search a friend" << std::endl;
+		std::cout << "EXIT: bye bye!" << std::endl;
 		std::cout << "What do you wan't to do?" << std::endl;
 		// Wait for instruction
-		std::cin >> instruct;
-		// std::getline(std::cin, instruct);
+		std::getline(std::cin, instruct);
 		// Check instruction
 		if (instruct.compare("ADD") == 0)
 		{
-
-			std::cout << "ADD WIP" << std::endl;
+			if (i++ < 8)
+				contacts[i].add_contact();
+			else
+				std::cout << "Sorry, you have already used every 8 contacts available. Too bad." << std::endl;
 		}
 		else if (instruct.compare("SEARCH") == 0)
 		{

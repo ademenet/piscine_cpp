@@ -4,7 +4,8 @@ FLAGS = -Wall -Wextra -Werror
 
 NAME = phonebook
 
-SRC = main.cpp
+SRC =	main.cpp\
+		Contact.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -14,7 +15,7 @@ $(NAME):
 	$(CC) $(FLAGS) -c $(SRC)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
-clean: $(OBJ)
+clean:
 	rm -rf $(OBJ)
 
 fclean: clean
