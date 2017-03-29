@@ -1,12 +1,12 @@
 #include <iostream>
-#include <string>
+#include <cctype>
 
 char		*capitalize(char *string)
 {
 	int		len = strlen(string);
 
 	for (int i = 0; i < len; i++)
-		string[i] = toupper(string[i]);
+		string[i] = std::toupper(string[i]);
 	return string;
 }
 
