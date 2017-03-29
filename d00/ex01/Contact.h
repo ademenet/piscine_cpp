@@ -2,6 +2,7 @@
 # define CONTACT_H
 
 # include <iostream>
+# include <iomanip>
 
 class Contact {
 
@@ -20,9 +21,8 @@ public:
 	std::string	underwear;
 	std::string	secret;
 	void add_contact(void);
-	void display_contact(void);
-
-private:
+	void display_contact(int index);
+	void get_contact(void);
 
 };
 
