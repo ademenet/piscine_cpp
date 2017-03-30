@@ -38,7 +38,7 @@ void Contact::add_contact(void)
 	return;
 }
 
-void Contact::display_contact(int index)
+void Contact::display_contact(int index) const
 {
 	std::cout << std::setfill(' ') << std::setw(10) << index << "|";
 	if (this->first_name.length() > 10)
@@ -59,7 +59,7 @@ void Contact::display_contact(int index)
 	return;
 }
 
-void Contact::get_contact(void)
+void Contact::get_contact(void) const
 {
 	std::cout << "-------- Contact's infos:" << std::endl;
 	std::cout << "-------- <first name>: " << this->first_name << std::endl;

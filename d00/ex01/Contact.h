@@ -21,8 +21,8 @@ public:
 	std::string	underwear;
 	std::string	secret;
 	void add_contact(void);
-	void display_contact(int index);
-	void get_contact(void);
+	void display_contact(int index) const;
+	void get_contact(void) const;
 
 };
 
