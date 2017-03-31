@@ -88,3 +88,11 @@ delete [] instance;
 ifs()
 ofs()
 ```
+## How to...
+
+### generate random number each time you run the program?
+
+``` c++
+std::srand(time(NULL));
+std::cout << rand() << std::endl;
+```
