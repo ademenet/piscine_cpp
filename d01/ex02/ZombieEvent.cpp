@@ -1,7 +1,8 @@
 #include <iostream>
 #include "ZombieEvent.hpp"
 
-std::string	ZombieEvent::_zombiesName[9] = {"Jean-Jean", "Soso", "Gody", "Roro", "Bat", "Glouglou", "Siphyl", "Soca", "Kyf"};
+const std::string	ZombieEvent::_zombiesName[] = {"Jean-Jean", "Soso", "Gody", "Roro", "Bat", "Glouglou", "Siphyl", "Soca", "Kyf"};
+std::string 		_type = NULL;
 
 ZombieEvent::ZombieEvent(void) {
 	return;
@@ -16,12 +17,15 @@ void	ZombieEvent::setZombieType(std::string zombieType) {
 	return;
 }
 
-Zombie	ZombieEvent::*randomChump(void) {
-	std::string		nameChosen	= this->_zombiesName[rand() % 9];
-	Zombie			*newOne 	= new Zombie(nameChosen, "Chump");
+Zombie	ZombieEvent::randomChump(void) {
+	// Select a random name inside _zombiesName list
+	std::string	chosenName	= this->_zombiesName[rand() % 9];
+	// Assign it to create a new zombie
+	Zombie		newOne(chosenName, "randomChump");
 	return(newOne);
 }
 
-Zombie	ZombieEvent::*newZombie(std::string name) {
-	return();
+Zombie	*ZombieEvent::newZombie(std::string name) {
+	Zombie		*newOne = new Zombie(name, this->_type);
+	return(newOne);
 }

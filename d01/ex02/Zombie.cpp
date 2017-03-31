@@ -12,7 +12,7 @@ Zombie::~Zombie(void) {
 }
 
 void Zombie::announce(void) const {
-	std::cout << "<" << this->name << " (" << this->type << ")>";
-	std::cout << " I neeeed braaaaaiiiinnnnsss!!! Wouldn't you?" << std::endl;
+	std::cout << "<" << this->name << " (" << this->type << ")> ";
+	std::cout << "I neeeed braaaaaiiiinnnnsss!!! Wouldn't you?" << std::endl;
 	return;
 }

@@ -9,13 +9,13 @@ public:
 	ZombieEvent();
 	~ZombieEvent();
 
-	void		setZombieType(std::string zombieType);
-	Zombie		*randomChump(void);
-	Zombie*		newZombie(std::string name);
+	void			setZombieType(std::string zombieType);
+	Zombie			randomChump(void);
+	Zombie			*newZombie(std::string name);
 
 private:
-	std::string	static _zombiesName[9];
-	std::string	_type;
+	static const	std::string _zombiesName[9];
+	std::string		_type;
 
 };
 
