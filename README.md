@@ -69,13 +69,24 @@ Comme en C on a des pointeurs de tout types. Attention à en pas se perdre là-d
 On utilise les mots clés `new` and `delete`, super easy.
 
 ``` c++
-// Pour allouer une seule instance.
+// Pour allouer une seule instance
 className *instance = new className;
 delete instance;
 
-// Pour 42 instances.
+// Pour 42 instances
 className *instance = new className[42];
 delete [] instance;
+```
+
+_Attention_ : il est impossible d'allouer _N_ elements en passant des arguments. Deux solutions semblent repondre a cette problematique :
+
+``` c++
+// la plus elegante utilise std::vector
+std::vector<Point> v(k, Point{5});
+// sinon, si on connait le nombre d'allocation souhaite
+ClassName *newClass = new ClassName[5]{{1}, {2}, {3}, {4}, {5}};
+// enfin on peut allouer avec `new` et utiliser une boucle `for`
+// pour les initialiser un a un
 ```
 
 ### references
