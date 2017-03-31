@@ -1,8 +1,6 @@
 #include <iostream>
 #include "Pony.hpp"
 
-
-
 void ponyOnTheHeap(void) {
 	Pony *myPonyOnTheHeap = new Pony("Roger le poney on the heap");
 
