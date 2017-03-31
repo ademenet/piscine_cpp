@@ -1,3 +1,4 @@
 phonebook
 a.out
 *.o
+*.gch

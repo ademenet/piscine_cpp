@@ -6,8 +6,8 @@
 class ZombieEvent {
 
 public:
-	static const	std::string _zombiesName[9];
-	std::string		_type;
+	static const	std::string zombiesName[9];
+	std::string		type;
 
 	ZombieEvent();
 	~ZombieEvent();

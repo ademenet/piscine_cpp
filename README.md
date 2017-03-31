@@ -93,6 +93,7 @@ ofs()
 ### generate random number each time you run the program?
 
 ``` c++
+// This solution use the timestamp
 std::srand(time(NULL));
 std::cout << rand() << std::endl;
 ```
