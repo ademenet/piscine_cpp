@@ -1,29 +1,28 @@
+.PHONY: all clean fclean re
+
+CC = clang++
+
 FLAG = -Wall -Wextra -Werror
 
 NAME = test
 
-SRC = Account.class.cpp \
-	test.cpp
+SRC =	Account.class.cpp \
+		test.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-		@clang++ $(FLAG) -o $@ $^ -lncurses
-		@echo "$(NAME) created"
+	$(CC) $(FLAG) -o $@ $^
 
 %.o:%.cpp
-		@clang++ $(FLAG) -c -o $@ $<
+	$(CC) $(FLAG) -c -o $@ $<
 
 clean:
-		@rm -f $(OBJ)
-		@echo "OBJ deleted"
+	rm -f $(OBJ)
 
 fclean: clean
-		@rm -f $(NAME)
-		@echo "$(NAME) deleted"
+	rm -f $(NAME)
 
 re: fclean all
-
-.PHONY: all, clean, fclean, re

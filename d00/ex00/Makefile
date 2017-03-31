@@ -1,19 +1,27 @@
 .PHONY: all clean fclean re
 
 CC = clang++
+
 FLAGS = -Wall -Wextra -Werror
+
 NAME = megaphone
+
+SRC =	megaphone.cpp
+
+OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME):
-	$(CC) $(FLAGS) -c megaphone.cpp
-	$(CC) $(FLAGS) megaphone.o -o megaphone
+$(NAME): $(OBJ)
+	$(CC) $(FLAGS) -o $@ $^
+
+%.o:%.cpp
+	$(CC) $(FLAGS) -c -o $@ $<
 
 clean:
-	rm -rf megaphone.o
+	rm -rf $(OBJ)
 
 fclean: clean
-	rm -rf megaphone
+	rm -rf $(NAME)
 
 re: fclean all
