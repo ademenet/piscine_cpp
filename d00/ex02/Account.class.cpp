@@ -57,7 +57,6 @@ Account::~Account(void)
 	_nbAccounts--;
 	std::cout << "index:" << _nbAccounts << ";amount:" << this->_amount;
 	std::cout << ";closed" << std::endl;
-	// TODO check si retour a la ligne ou pas dans fichier
 	return;
 }
 
