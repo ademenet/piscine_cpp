@@ -1,8 +1,6 @@
 #include <iostream>
 #include <fstream>
 
-// TODO cat: test: Is a directory
-
 int main(int argc, char const *argv[]) {
 	if (argc > 1) {
 		for (int i = 1; i < argc; i++) {
