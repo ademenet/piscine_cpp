@@ -2,3 +2,4 @@ phonebook
 a.out
 *.o
 *.gch
+log_file.log

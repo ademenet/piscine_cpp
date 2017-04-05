@@ -2,6 +2,8 @@
 #include <fstream>
 #include <sstream>
 
+// TODO boucle infini si fichier avec des a et demande remplacer des a par des a
+
 void replace(std::string filename, std::string str1, std::string str2) {
 	std::ifstream	in(filename);
 	std::ofstream	out(filename + ".replace");
