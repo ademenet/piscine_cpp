@@ -6,9 +6,6 @@
 class ZombieEvent {
 
 public:
-	static const	std::string zombiesName[9];
-	std::string		type;
-
 	ZombieEvent();
 	~ZombieEvent();
 
@@ -16,6 +13,9 @@ public:
 	Zombie			randomChump(void);
 	Zombie			*newZombie(std::string name);
 
+private:
+	static const	std::string _zombiesName[9];
+	std::string		_type;
 };
 
 #endif

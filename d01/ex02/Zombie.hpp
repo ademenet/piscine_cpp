@@ -10,8 +10,10 @@ public:
 	~Zombie(void);
 
 	void announce(void) const;
-	std::string	type;
-	std::string	name;
+
+private:
+	std::string	_type;
+	std::string	_name;
 
 };
 
