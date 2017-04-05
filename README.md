@@ -108,3 +108,5 @@ ofs()
 std::srand(time(NULL));
 std::cout << rand() << std::endl;
 ```
+
+### pointer to member of a class
