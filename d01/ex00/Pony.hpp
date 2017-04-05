@@ -6,13 +6,13 @@
 class Pony {
 
 public:
-
-	std::string name;
-
 	Pony( std::string ponyName );
 	~Pony(void);
 
 	void doStuffThatPonyDo(void) const;
+
+private:
+	const std::string _name;
 
 };
 
