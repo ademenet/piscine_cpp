@@ -10,7 +10,7 @@ public:
 	HumanB(std::string name);
 	~HumanB(void);
 
-	void attack(void);
+	const void attack(void);
 	void setWeapon(Weapon &weapon);
 
 private:

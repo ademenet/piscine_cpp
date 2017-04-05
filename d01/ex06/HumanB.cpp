@@ -13,7 +13,7 @@ void HumanB::setWeapon(Weapon &weapon) {
 	return;
 }
 
-void HumanB::attack(void) {
+const void HumanB::attack(void) {
 	std::cout << this->_name << " attacks with his " << this->_weapon->getType() << std::endl;
 	return;
 }
