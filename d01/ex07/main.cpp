@@ -2,10 +2,12 @@
 #include <fstream>
 #include <sstream>
 
-// TODO boucle infini si fichier avec des a et demande remplacer des a par des a
-
 void replace(std::string filename, std::string str1, std::string str2) {
 	std::ifstream	in(filename);
+	// Put the name in uppercase
+	for (size_t i = 0; i < filename.length(); i++)
+		filename[i] = std::toupper(filename[i]);
+
 	std::ofstream	out(filename + ".replace");
 	std::string		line;
 
@@ -16,8 +18,9 @@ void replace(std::string filename, std::string str1, std::string str2) {
 	}
 	size_t len = str1.length();
 	while(getline(in, line)) {
+		size_t pos = -len;
 		while (true) {
-			size_t pos = line.find(str1);
+			pos = line.find(str1, pos + str1.length());
 			if (pos != std::string::npos)
 				line.replace(pos, len, str2);
 			else
