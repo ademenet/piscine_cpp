@@ -14,8 +14,8 @@ public:
 	void announce(void) const;
 
 private:
-	std::string	_type;
-	std::string	_name;
+	std::string			_type;
+	std::string			_name;
 
 };
 

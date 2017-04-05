@@ -7,14 +7,16 @@
 class ZombieHorde {
 
 public:
-	static const	std::string zombiesName[9];
-	unsigned int	hordeSize;
-	Zombie			*zombiesHorde;
-
 	ZombieHorde(unsigned int N);
 	~ZombieHorde(void);
 
 	void announce(void) const;
+
+private:
+	const unsigned int			_hordeSize;
+	Zombie						*_zombiesHorde;
+	static const std::string	_zombiesName[9];
+
 };
 
 #endif

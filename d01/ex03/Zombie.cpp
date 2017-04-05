@@ -2,7 +2,7 @@
 #include "Zombie.hpp"
 
 Zombie::Zombie() {
-	std::cout << "Wuuut?! A zombie that called himself " << this->_name << " just appeared!" << std::endl;
+	std::cout << "A new zombie created!" << std::endl;
 	return;
 }
 
