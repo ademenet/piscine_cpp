@@ -17,7 +17,7 @@ public:
 
 private:
 	int					_fpvalue;
-	static const int	_fbits = 8; // Allways 8
+	static const int	_fbits; // Allways 8
 
 };
 
