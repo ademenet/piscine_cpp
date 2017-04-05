@@ -9,9 +9,9 @@ Human::~Human(void) {
 }
 
 std::string Human::identify(void) {
-	return(this->humanBrain.identify());
+	return(this->_humanBrain.identify());
 }
 
 const Brain &Human::getBrain(void) {
-	return(this->humanBrain);
+	return(this->_humanBrain);
 }
