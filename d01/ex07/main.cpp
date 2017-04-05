@@ -18,9 +18,9 @@ void replace(std::string filename, std::string str1, std::string str2) {
 	}
 	size_t len = str1.length();
 	while(getline(in, line)) {
-		size_t pos = -len;
+		size_t pos = - str2.length();
 		while (true) {
-			pos = line.find(str1, pos + str1.length());
+			pos = line.find(str1, pos + str2.length());
 			if (pos != std::string::npos)
 				line.replace(pos, len, str2);
 			else
