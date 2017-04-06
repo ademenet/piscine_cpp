@@ -1,7 +1,7 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(std::string name) : _name(name) {
-	std::cout << "Claptrap -- start bootup sequence." << std::endl;
+	std::cout << "\"Hey everybody! Check out my package!\"" << std::endl;
 	this->_hitpoints			= 100;
 	this->_maxhitpoints			= 100;
 	this->_energypoints			= 100;
@@ -19,7 +19,7 @@ FragTrap::FragTrap(FragTrap const &src) {
 }
 
 FragTrap::~FragTrap(void) {
-	std::cout << "Are you god? Am I dead?" << std::endl;
+	std::cout << "\"I'm too pretty to die!\"" << std::endl;
 	return;
 }
 
@@ -41,7 +41,7 @@ void FragTrap::meleeAttack(std::string const &target) {
 
 void FragTrap::takeDamage(unsigned int amount) {
 	std::cout << this->_name << " takes " << amount << " of damages minus armor of ";
-	std::cout << this->_armordamagereduction << ". <hitpoints> goes from " << this->_hitpoints;
+	std::cout << this->_armordamagereduction << ". Hitpoints goes from " << this->_hitpoints;
 
 	this->_hitpoints -= (amount - this->_armordamagereduction);
 	if (this->_hitpoints < 0)
@@ -53,7 +53,7 @@ void FragTrap::takeDamage(unsigned int amount) {
 
 void FragTrap::beRepaired(unsigned int amount) {
 	std::cout << this->_name << " gets repaired of " << amount;
-	std::cout << ". <hitpoints> goes from " << this->_hitpoints;
+	std::cout << ". Hitpoints goes from " << this->_hitpoints;
 
 	this->_hitpoints += amount;
 	if (this->_hitpoints > (int)this->_maxhitpoints)
@@ -75,8 +75,10 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target) {
 		std::cout << "You don't have enough energy to operate an attack." << std::endl;
 		this->_energypoints = 0;
 	}
-	else
+	else {
+		std::cout << "\"I'm pulling tricks outta my hat!\" ";
 		(this->*attacks[rand() % 5])(target);
+	}
 }
 
 void FragTrap::spoonAttack(std::string const &target) {
