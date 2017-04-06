@@ -7,15 +7,15 @@ Fixed::Fixed(void) : _fpvalue(0) {
 	return;
 }
 
-Fixed::Fixed(int const nb) {
+Fixed::Fixed(const int nb) {
 	std::cout << "Integer constructor called" << std::endl;
-	this->_fpvalue = nb << Fixed::_fbits;
+	this->_fpvalue = nb << (Fixed::_fbits);
 	return;
 }
 
-Fixed::Fixed(float const nb) {
+Fixed::Fixed(const float nb) {
 	std::cout << "Float constructor called" << std::endl;
-	this->_fpvalue = roundf(nb * Fixed::_powerOfTwo(Fixed::_fbits));
+	this->_fpvalue = (int)roundf(nb * (1 << Fixed::_fbits));
 	return;
 }
 
@@ -115,20 +115,6 @@ Fixed Fixed::Fixed::operator--(int)
     return (tmp);
 }
 
-const Fixed &Fixed::min(Fixed const &nb1, Fixed const &nb2)
-{
-    if (nb1.toFloat() < nb2.toFloat())
-        return (nb1);
-    return (nb2);
-}
-
-const Fixed &Fixed::max(Fixed const &nb1, Fixed const &nb2)
-{
-    if (nb1.toFloat() > nb2.toFloat())
-        return (nb1);
-    return (nb2);
-}
-
 Fixed &Fixed::min(Fixed &nb1, Fixed &nb2)
 {
     if (nb1.toFloat() < nb2.toFloat())
@@ -143,8 +129,21 @@ Fixed &Fixed::max(Fixed &nb1, Fixed &nb2)
     return (nb2);
 }
 
+const Fixed &Fixed::min(Fixed const &nb1, Fixed const &nb2)
+{
+    if (nb1.toFloat() < nb2.toFloat())
+        return (nb1);
+    return (nb2);
+}
+
+const Fixed &Fixed::max(Fixed const &nb1, Fixed const &nb2)
+{
+    if (nb1.toFloat() > nb2.toFloat())
+        return (nb1);
+    return (nb2);
+}
+
 int Fixed::getRawBits(void) const {
-	std::cout << "getRawBits member function called" << std::endl;
 	return(this->_fpvalue);
 }
 
@@ -153,10 +152,15 @@ void Fixed::setRawBits(const int raw) {
 	this->_fpvalue = raw;
 }
 
-float toFloat(void) {
-	return ((float)this->_fpvalue / Fixed::_pow2(Fixed::_fbits));
+float Fixed::toFloat(void) const {
+	return ((float)this->_fpvalue / (1 << Fixed::_fbits));
 }
 
-int toInt(void) {
-	return (this->raw >> Fixed::_fbits);
+int Fixed::toInt(void) const {
+	return (this->_fpvalue >> Fixed::_fbits);
+}
+
+std::ostream &operator<<(std::ostream &o, Fixed const &rhs) {
+	o << rhs.toFloat();
+	return o;
 }

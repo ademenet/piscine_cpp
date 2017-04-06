@@ -8,12 +8,31 @@ class Fixed {
 
 public:
 	Fixed(void);
-	Fixed(int	nb);
-	Fixed(float	nb);
-	Fixed(Fixed const & src);
+	Fixed(const int	nb);
+	Fixed(const float	nb);
+	Fixed(Fixed const &src);
 	~Fixed(void);
 
-	Fixed &operator=(Fixed const & rhs);
+	// Operators overloading:
+	Fixed &operator=(Fixed const &rhs);
+	bool operator>(Fixed const &rhs);
+	bool operator<(Fixed const &rhs);
+	bool operator>=(Fixed const &rhs);
+	bool operator<=(Fixed const &rhs);
+	bool operator==(Fixed const &rhs);
+	bool operator!=(Fixed const &rhs);
+	Fixed operator+(Fixed const &rhs);
+	Fixed operator-(Fixed const &rhs);
+	Fixed operator*(Fixed const &rhs);
+	Fixed operator/(Fixed const &rhs);
+	Fixed &operator++();
+	Fixed &operator--();
+	Fixed operator++(int);
+	Fixed operator--(int);
+	static const Fixed &min(Fixed const &nb1, Fixed const &nb2);
+	static const Fixed &max(Fixed const &nb1, Fixed const &nb2);
+	static Fixed &min(Fixed &nb1, Fixed &nb2);
+	static Fixed &max(Fixed &nb1, Fixed &nb2);
 
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
@@ -26,5 +45,7 @@ private:
 	static const int	_fbits; // Allways 8
 
 };
+
+std::ostream &operator<<(std::ostream &o, Fixed const &rhs);
 
 #endif
