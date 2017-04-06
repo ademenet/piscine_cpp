@@ -1,5 +1,9 @@
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap(void) {
+	return;
+}
+
 FragTrap::FragTrap(std::string name) : _name(name) {
 	std::cout << "\"Hey everybody! Check out my package!\"" << std::endl;
 	this->_hitpoints			= 100;
@@ -24,15 +28,17 @@ FragTrap::~FragTrap(void) {
 }
 
 FragTrap &FragTrap::operator=(FragTrap const &rhs) {
-	this->_name					= rhs._name;
-	this->_hitpoints			= rhs._hitpoints;
-	this->_maxhitpoints			= rhs._maxhitpoints;
-	this->_energypoints			= rhs._energypoints;
-	this->_maxenergypoints		= rhs._maxenergypoints;
-	this->_level				= rhs._level;
-	this->_meleedamage			= rhs._meleedamage;
-	this->_rangeddamage			= rhs._rangeddamage;
-	this->_armordamagereduction	= rhs._armordamagereduction;
+	if (this != &rhs) {
+		this->_name					= rhs._name;
+		this->_hitpoints			= rhs._hitpoints;
+		this->_maxhitpoints			= rhs._maxhitpoints;
+		this->_energypoints			= rhs._energypoints;
+		this->_maxenergypoints		= rhs._maxenergypoints;
+		this->_level				= rhs._level;
+		this->_meleedamage			= rhs._meleedamage;
+		this->_rangeddamage			= rhs._rangeddamage;
+		this->_armordamagereduction	= rhs._armordamagereduction;
+	}
 	return *this;
 }
 

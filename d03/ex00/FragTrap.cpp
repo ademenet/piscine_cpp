@@ -24,15 +24,17 @@ FragTrap::~FragTrap(void) {
 }
 
 FragTrap &FragTrap::operator=(FragTrap const &rhs) {
-	this->_name					= rhs._name;
-	this->_hitpoints			= rhs._hitpoints;
-	this->_maxhitpoints			= rhs._maxhitpoints;
-	this->_energypoints			= rhs._energypoints;
-	this->_maxenergypoints		= rhs._maxenergypoints;
-	this->_level				= rhs._level;
-	this->_meleedamage			= rhs._meleedamage;
-	this->_rangeddamage			= rhs._rangeddamage;
-	this->_armordamagereduction	= rhs._armordamagereduction;
+	if (this != &rhs) {
+		this->_name					= rhs._name;
+		this->_hitpoints			= rhs._hitpoints;
+		this->_maxhitpoints			= rhs._maxhitpoints;
+		this->_energypoints			= rhs._energypoints;
+		this->_maxenergypoints		= rhs._maxenergypoints;
+		this->_level				= rhs._level;
+		this->_meleedamage			= rhs._meleedamage;
+		this->_rangeddamage			= rhs._rangeddamage;
+		this->_armordamagereduction	= rhs._armordamagereduction;
+	}
 	return *this;
 }
 

@@ -1,5 +1,9 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap(void) {
+	return;
+}
+
 ScavTrap::ScavTrap(std::string name) : _name(name) {
 	std::cout << "\"Look out everybody! Things are about to get awesome!\"" << std::endl;
 	this->_hitpoints			= 100;
@@ -24,15 +28,17 @@ ScavTrap::~ScavTrap(void) {
 }
 
 ScavTrap &ScavTrap::operator=(ScavTrap const &rhs) {
-	this->_name					= rhs._name;
-	this->_hitpoints			= rhs._hitpoints;
-	this->_maxhitpoints			= rhs._maxhitpoints;
-	this->_energypoints			= rhs._energypoints;
-	this->_maxenergypoints		= rhs._maxenergypoints;
-	this->_level				= rhs._level;
-	this->_meleedamage			= rhs._meleedamage;
-	this->_rangeddamage			= rhs._rangeddamage;
-	this->_armordamagereduction	= rhs._armordamagereduction;
+	if (this != &rhs) {
+		this->_name					= rhs._name;
+		this->_hitpoints			= rhs._hitpoints;
+		this->_maxhitpoints			= rhs._maxhitpoints;
+		this->_energypoints			= rhs._energypoints;
+		this->_maxenergypoints		= rhs._maxenergypoints;
+		this->_level				= rhs._level;
+		this->_meleedamage			= rhs._meleedamage;
+		this->_rangeddamage			= rhs._rangeddamage;
+		this->_armordamagereduction	= rhs._armordamagereduction;
+	}
 	return *this;
 }
 
