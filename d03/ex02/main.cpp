@@ -1,6 +1,5 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
 
 int main(void) {
 	FragTrap	frag("Jack");

@@ -6,7 +6,6 @@
 class ClapTrap {
 
 public:
-	ClapTrap(void);
 	ClapTrap(std::string name);
 	ClapTrap(ClapTrap const &src);
 	~ClapTrap(void);
@@ -29,6 +28,7 @@ protected:
 	unsigned int		_armordamagereduction;
 
 private:
+	ClapTrap(void);
 
 };
 

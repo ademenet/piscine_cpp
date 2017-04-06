@@ -1,6 +1,6 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string name) : ClapTrap::ClapTrap(name) {
+FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 	std::cout << "FragTrap: \"Hey everybody! Check out my package!\"" << std::endl;
 	// this->_hitpoints			= 100;
 	// this->_maxhitpoints			= 100;
@@ -13,7 +13,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap::ClapTrap(name) {
 	return;
 }
 
-FragTrap::FragTrap(FragTrap const &src) {
+FragTrap::FragTrap(FragTrap const &src) : ClapTrap(src) {
 	*this = src;
 	return;
 }

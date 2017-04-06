@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap::ClapTrap(name) {
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	std::cout << "ScavTrap: \"Look out everybody! Things are about to get awesome!\"" << std::endl;
 	// this->_hitpoints			= 100;
 	// this->_maxhitpoints			= 100;
@@ -13,7 +13,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap::ClapTrap(name) {
 	return;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &src) {
+ScavTrap::ScavTrap(ScavTrap const &src) : ClapTrap(src) {
 	*this = src;
 	return;
 }
