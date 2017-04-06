@@ -36,42 +36,6 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &rhs) {
 	return *this;
 }
 
-void ScavTrap::rangedAttack(std::string const &target) {
-	std::cout << this->_name << " attacks " << target << " at range, causing ";
-	std::cout << this->_rangeddamage << " damages." << std::endl;
-	return;
-}
-
-void ScavTrap::meleeAttack(std::string const &target) {
-	std::cout << this->_name << " attacks " << target << " in melee, causing ";
-	std::cout << this->_meleedamage << " damages." << std::endl;
-	return;
-}
-
-void ScavTrap::takeDamage(unsigned int amount) {
-	std::cout << this->_name << " takes " << amount << " of damages minus armor of ";
-	std::cout << this->_armordamagereduction << ". Hitpoints goes from " << this->_hitpoints;
-
-	this->_hitpoints -= (amount - this->_armordamagereduction);
-	if (this->_hitpoints < 0)
-		this->_hitpoints = 0;
-
-	std::cout << " to " << this->_hitpoints << "." << std::endl;
-	return;
-}
-
-void ScavTrap::beRepaired(unsigned int amount) {
-	std::cout << this->_name << " gets repaired of " << amount;
-	std::cout << ". Hitpoints goes from " << this->_hitpoints;
-
-	this->_hitpoints += amount;
-	if (this->_hitpoints > (int)this->_maxhitpoints)
-		this->_hitpoints = (int)this->_maxhitpoints;
-
-	std::cout << " to " << this->_hitpoints << "." << std::endl;
-	return;
-}
-
 void ScavTrap::challengeNewcomer(void) {
 	std::srand(time(NULL));
 	int i = rand() % 4;
