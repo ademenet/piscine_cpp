@@ -18,13 +18,6 @@ public:
 
 	void vaulthunter_dot_exe(std::string const &target);
 
-	void spoonAttack(std::string const &target);
-	void fartAttack(std::string const &target);
-	void stabiloAttack(std::string const &target);
-	void sisterAttack(std::string const &target);
-	void windAttack(std::string const &target);
-
-
 private:
 	FragTrap(void);
 
