@@ -14,10 +14,10 @@ public:
 
 	void challengeNewcomer(void);
 
+protected:
+
 private:
 	ScavTrap(void);
-
-	std::string			_name;
 
 };
 

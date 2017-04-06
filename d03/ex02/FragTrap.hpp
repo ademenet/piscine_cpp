@@ -14,10 +14,10 @@ public:
 
 	void vaulthunter_dot_exe(std::string const &target);
 
+protected:
+
 private:
 	FragTrap(void);
-
-	std::string			_name;
 
 };
 #endif
