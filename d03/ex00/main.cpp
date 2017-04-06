@@ -14,5 +14,6 @@ int main(void) {
 	robot.vaulthunter_dot_exe("enemy");
 	robot.vaulthunter_dot_exe("enemy");
 	robot.vaulthunter_dot_exe("enemy");
+	robot.meleeAttack("enemy");
 	return 0;
 }
