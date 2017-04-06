@@ -8,12 +8,12 @@ class Fixed {
 
 public:
 	Fixed(void);
-	Fixed(int	nb);
-	Fixed(float	nb);
-	Fixed(Fixed const & src);
+	Fixed(const int		nb);
+	Fixed(const float	nb);
+	Fixed(Fixed const	&src);
 	~Fixed(void);
 
-	Fixed &operator=(Fixed const & rhs);
+	Fixed &operator=(Fixed const &rhs);
 
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
@@ -26,5 +26,7 @@ private:
 	static const int	_fbits; // Allways 8
 
 };
+
+std::ostream &operator<<(std::ostream &o, Fixed const &rhs);
 
 #endif
