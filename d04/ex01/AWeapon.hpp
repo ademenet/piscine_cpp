@@ -17,9 +17,9 @@ public:
 
 	virtual void attack(void) const = 0; // This transforms AWeapon to abstract class
 
-	int				_damage;
-	int				_apcost;
-	std::string		_name;
+	std::string		name;
+	int				apcost;
+	int				damage;
 
 protected:
 	AWeapon(void);

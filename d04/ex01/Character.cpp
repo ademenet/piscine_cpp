@@ -38,7 +38,7 @@ void Character::attack(Enemy *enemy) {
 	if (this->_weapon) {
 		std::cout << this->_name << " attacks " << enemy << " with a " << this->_weapon << std::endl;
 		this->_weapon->attack();
-		enemy->_hp -= this->_weapon->_damage;
+		enemy->_hp -= this->_weapon->damage;
 		if (enemy->_hp < 1)
 			delete enemy;
 	}
@@ -60,7 +60,7 @@ int Character::getAPNumber() const {
 }
 
 const std::string Character::getWeaponName() const {
-	return(this->_weapon->_name);
+	return(this->_weapon->name);
 }
 
 // Out of scope
