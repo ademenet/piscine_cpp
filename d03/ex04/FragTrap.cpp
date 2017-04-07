@@ -2,14 +2,14 @@
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 	std::cout << "FragTrap: \"Hey everybody! Check out my package!\"" << std::endl;
-	// this->_hitpoints			= 100;
-	// this->_maxhitpoints			= 100;
-	// this->_energypoints			= 100;
-	// this->_maxenergypoints		= 100;
+	this->_hitpoints			= this->fraghitpoints;
+	this->_maxhitpoints			= this->fragmaxhitpoints;
+	this->_energypoints			= this->fragenergypoints;
+	this->_maxenergypoints		= this->fragmaxenergypoints;
+	this->_meleedamage			= this->fragmeleedamage;
+	this->_rangeddamage			= this->fragrangeddamage;
+	this->_armordamagereduction	= this->fragarmordamagereduction;
 	// this->_level				= 1;
-	// this->_meleedamage			= 30;
-	// this->_rangeddamage			= 20;
-	// this->_armordamagereduction	= 5;
 	return;
 }
 

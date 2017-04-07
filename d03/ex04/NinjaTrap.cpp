@@ -2,15 +2,14 @@
 
 NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name) {
 	std::cout << "NinjaTrap: \"I'm a robot ninja...\"" << std::endl;
-
-	this->_hitpoints			= 60;
-	this->_maxhitpoints			= 60;
-	this->_energypoints			= 120;
-	this->_maxenergypoints		= 120;
+	this->_hitpoints			= this->ninjahitpoints;
+	this->_maxhitpoints			= this->ninjamaxhitpoints;
+	this->_energypoints			= this->ninjaenergypoints;
+	this->_maxenergypoints		= this->ninjamaxenergypoints;
+	this->_meleedamage			= this->ninjameleedamage;
+	this->_rangeddamage			= this->ninjarangeddamage;
+	this->_armordamagereduction	= this->ninjaarmordamagereduction;
 	// this->_level				= 1;
-	this->_meleedamage			= 60;
-	this->_rangeddamage			= 5;
-	this->_armordamagereduction	= 0;
 	return;
 }
 

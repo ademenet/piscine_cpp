@@ -1,14 +1,14 @@
 #include "SuperTrap.hpp"
 
 SuperTrap::SuperTrap(std::string name) : ClapTrap(name), FragTrap(name), NinjaTrap(name) {
-	this->_hitpoints			= 100;
-	this->_maxhitpoints			= 100;
-	this->_energypoints			= 120;
-	this->_maxenergypoints		= 120;
+	this->_hitpoints			= this->FragTrap::_hitpoints;
+	this->_maxhitpoints			= this->FragTrap::_maxhitpoints;
+	this->_energypoints			= this->NinjaTrap::_energypoints;
+	this->_maxenergypoints		= this->NinjaTrap::_maxenergypoints;
 	// this->_level				= 1;
-	this->_meleedamage			= 60;
-	this->_rangeddamage			= 20;
-	this->_armordamagereduction	= 5;
+	this->_meleedamage			= this->NinjaTrap::_meleedamage;
+	this->_rangeddamage			= this->FragTrap::_rangeddamage;
+	this->_armordamagereduction	= this->FragTrap::_armordamagereduction;
 	return;
 }
 
