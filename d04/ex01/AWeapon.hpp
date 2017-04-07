@@ -11,17 +11,20 @@ public:
 	virtual ~AWeapon(void); // Verifier si cest bien virtual devant
 	AWeapon &operator=(AWeapon const &rhs);
 
-	virtual std::string getName(void) const;
+	const std::string getName(void) const;
 	int getAPCost(void) const;
 	int getDamage(void) const;
 
 	virtual void attack(void) const = 0; // This transforms AWeapon to abstract class
 
-private:
-	AWeapon(void);
+protected:
 	std::string		_name;
 	int				_apcost;
 	int				_damage;
+
+	AWeapon(void);
+
+private:
 
 };
 

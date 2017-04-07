@@ -18,7 +18,16 @@ AWeapon::~AWeapon(void) {
 }
 
 AWeapon &AWeapon::operator=(AWeapon const &rhs) {
+	if (this != &rhs) {
+		this->_name = rhs._name;
+		this->_apcost = rhs._apcost;
+		this->_damage = rhs._damage;
+	}
 	return *this;
+}
+
+const std::string AWeapon::getName(void) const {
+	return(this->_name);
 }
 
 int AWeapon::getAPCost(void) const {
