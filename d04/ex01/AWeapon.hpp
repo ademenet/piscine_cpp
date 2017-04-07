@@ -11,7 +11,7 @@ public:
 	virtual ~AWeapon(void); // Verifier si cest bien virtual devant
 	AWeapon &operator=(AWeapon const &rhs);
 
-	const std::string getName(void) const; // [..]
+	virtual std::string getName(void) const;
 	int getAPCost(void) const;
 	int getDamage(void) const;
 
@@ -19,6 +19,9 @@ public:
 
 private:
 	AWeapon(void);
+	std::string		_name;
+	int				_apcost;
+	int				_damage;
 
 };
 
