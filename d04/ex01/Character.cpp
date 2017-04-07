@@ -41,6 +41,7 @@ void Character::attack(Enemy *enemy) {
 		enemy->takeDamage(this->_weapon->getDamage());
 		if (enemy->getHP() < 1)
 			delete enemy;
+		this->_AP -= this->_weapon->getAPCost();
 	}
 	return;
 }

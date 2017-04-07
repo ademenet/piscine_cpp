@@ -4,6 +4,8 @@
 #include "Character.hpp"
 #include "RadScorpion.hpp"
 
+// TODO faire un meilleur main !
+
 int main()
 {
 	Character* zaz = new Character("zaz");
