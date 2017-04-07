@@ -18,7 +18,7 @@ public:
 	void attack(Enemy*);
 	const std::string getName() const;
 
-	bool getEquip();
+	int getEquip() const;
 	int getAPNumber() const;
 	const std::string getWeaponName() const;
 

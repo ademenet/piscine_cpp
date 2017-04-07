@@ -1,6 +1,6 @@
 #include "AWeapon.hpp"
 
-AWeapon::AWeapon(std::string const &name, int apcost, int damage) : name(name), apcost(apcost), damage(damage) {
+AWeapon::AWeapon(std::string const &name, int apcost, int damage) : _name(name), _apcost(apcost), _damage(damage) {
 	return;
 }
 
@@ -19,21 +19,21 @@ AWeapon::~AWeapon(void) {
 
 AWeapon &AWeapon::operator=(AWeapon const &rhs) {
 	if (this != &rhs) {
-		this->name = rhs.name;
-		this->apcost = rhs.apcost;
-		this->damage = rhs.damage;
+		this->_name = rhs._name;
+		this->_apcost = rhs._apcost;
+		this->_damage = rhs._damage;
 	}
 	return *this;
 }
 
 const std::string AWeapon::getName(void) const {
-	return(this->name);
+	return(this->_name);
 }
 
 int AWeapon::getAPCost(void) const {
-	return(this->apcost);
+	return(this->_apcost);
 }
 
 int AWeapon::getDamage(void) const {
-	return(this->damage);
+	return(this->_damage);
 }

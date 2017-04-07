@@ -36,10 +36,10 @@ void Character::equip(AWeapon *weapon) {
 
 void Character::attack(Enemy *enemy) {
 	if (this->_weapon) {
-		std::cout << this->_name << " attacks " << enemy << " with a " << this->_weapon << std::endl;
+		std::cout << this->_name << " attacks " << enemy->getType() << " with a " << this->_weapon->getName() << std::endl;
 		this->_weapon->attack();
-		enemy->_hp -= this->_weapon->damage;
-		if (enemy->_hp < 1)
+		enemy->takeDamage(this->_weapon->getDamage());
+		if (enemy->getHP() < 1)
 			delete enemy;
 	}
 	return;
@@ -49,10 +49,10 @@ const std::string Character::getName() const {
 	return(this->_name);
 }
 
-bool Character::getEquip() {
+int Character::getEquip() const {
 	if (this->_weapon)
-		return(true);
-	return(false);
+		return(1);
+	return(0);
 }
 
 int Character::getAPNumber() const {
@@ -60,7 +60,7 @@ int Character::getAPNumber() const {
 }
 
 const std::string Character::getWeaponName() const {
-	return(this->_weapon->name);
+	return(this->_weapon->getName());
 }
 
 // Out of scope
