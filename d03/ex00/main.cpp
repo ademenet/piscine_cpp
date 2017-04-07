@@ -3,10 +3,13 @@
 int main(void) {
 	FragTrap	robot("Jack");
 
-	robot.rangedAttack("enemy");
 	robot.meleeAttack("enemy");
+	robot.rangedAttack("enemy");
 	robot.takeDamage(30);
-	robot.takeDamage(100);
+	robot.takeDamage(30);
+	robot.takeDamage(30);
+	robot.takeDamage(30);
+	robot.takeDamage(30);
 	robot.beRepaired(40);
 	robot.beRepaired(100);
 	robot.vaulthunter_dot_exe("enemy");
