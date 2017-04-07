@@ -1,7 +1,7 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(std::string name) : _name(name) {
-	std::cout << "\"Hey everybody! Check out my package!\"" << std::endl;
+	std::cout << "FragTrap: \"Hey everybody! Check out my package!\"" << std::endl;
 	this->_hitpoints			= 100;
 	this->_maxhitpoints			= 100;
 	this->_energypoints			= 100;
@@ -19,7 +19,7 @@ FragTrap::FragTrap(FragTrap const &src) {
 }
 
 FragTrap::~FragTrap(void) {
-	std::cout << "\"I'm too pretty to die!\"" << std::endl;
+	std::cout << "FragTrap: \"I'm too pretty to die!\"" << std::endl;
 	return;
 }
 

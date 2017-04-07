@@ -5,7 +5,7 @@ ScavTrap::ScavTrap(void) {
 }
 
 ScavTrap::ScavTrap(std::string name) : _name(name) {
-	std::cout << "\"Look out everybody! Things are about to get awesome!\"" << std::endl;
+	std::cout << "ScavTrap: \"Look out everybody! Things are about to get awesome!\"" << std::endl;
 	this->_hitpoints			= 100;
 	this->_maxhitpoints			= 100;
 	this->_energypoints			= 50;
@@ -23,7 +23,7 @@ ScavTrap::ScavTrap(ScavTrap const &src) {
 }
 
 ScavTrap::~ScavTrap(void) {
-	std::cout << "\"I'm leaking!\"" << std::endl;
+	std::cout << "ScavTrap: \"I'm leaking!\"" << std::endl;
 	return;
 }
 
