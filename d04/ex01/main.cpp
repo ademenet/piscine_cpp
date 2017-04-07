@@ -7,19 +7,10 @@
 int main()
 {
 	Character* zaz = new Character("zaz");
-
 	std::cout << *zaz;
-
 	Enemy* b = new RadScorpion();
-
 	AWeapon* pr = new PlasmaRifle();
 	AWeapon* pf = new PowerFist();
-
-	pr->attack();
-	pf->attack();
-	delete pr;
-	delete pf;
-
 	zaz->equip(pr);
 	std::cout << *zaz;
 	zaz->equip(pf);
