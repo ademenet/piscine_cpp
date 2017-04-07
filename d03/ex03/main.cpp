@@ -48,6 +48,15 @@ int main(void) {
 	NinjaTrap	ninja("Henry");
 
 	std::cout << std::endl << "-- Tests for NinjaTrap" << std::endl;
+	ninja.meleeAttack("enemy");
+	ninja.rangedAttack("enemy");
+	ninja.takeDamage(30);
+	ninja.takeDamage(30);
+	ninja.takeDamage(30);
+	ninja.takeDamage(30);
+	ninja.takeDamage(30);
+	ninja.beRepaired(40);
+	ninja.beRepaired(100);
 	std::cout << "--- For clap == John" << std::endl;
 	ninja.ninjaShoebox(clap);
 	std::cout << "--- For frag == Jack" << std::endl;
