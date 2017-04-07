@@ -8,23 +8,31 @@ int main(void) {
 	FragTrap	frag("Jack");
 	ScavTrap	scav("Jenny");
 
-	frag.rangedAttack("enemy1");
-	frag.meleeAttack("enemy2");
+	std::cout << std::endl << "-- Tests for FragTrap" << std::endl;
+	frag.meleeAttack("enemy");
+	frag.rangedAttack("enemy");
 	frag.takeDamage(30);
-	frag.takeDamage(100);
+	frag.takeDamage(30);
+	frag.takeDamage(30);
+	frag.takeDamage(30);
+	frag.takeDamage(30);
 	frag.beRepaired(40);
 	frag.beRepaired(100);
-	frag.vaulthunter_dot_exe("enemy3");
-	frag.vaulthunter_dot_exe("enemy4");
-	frag.vaulthunter_dot_exe("enemy5");
-	frag.vaulthunter_dot_exe("enemy6");
-	frag.vaulthunter_dot_exe("enemy7");
-	frag.meleeAttack("enemy8");
+	frag.vaulthunter_dot_exe("enemy");
+	frag.vaulthunter_dot_exe("enemy");
+	frag.vaulthunter_dot_exe("enemy");
+	frag.vaulthunter_dot_exe("enemy");
+	frag.vaulthunter_dot_exe("enemy");
+	frag.meleeAttack("enemy");
 
-	scav.rangedAttack("enemy9");
-	scav.meleeAttack("enemy10");
+	std::cout << std::endl << "-- Tests for ScavTrap" << std::endl;
+	scav.meleeAttack("enemy");
+	scav.rangedAttack("enemy");
 	scav.takeDamage(30);
-	scav.takeDamage(100);
+	scav.takeDamage(30);
+	scav.takeDamage(30);
+	scav.takeDamage(30);
+	scav.takeDamage(30);
 	scav.beRepaired(40);
 	scav.beRepaired(100);
 	scav.challengeNewcomer();
@@ -32,19 +40,37 @@ int main(void) {
 	scav.challengeNewcomer();
 	scav.challengeNewcomer();
 	scav.challengeNewcomer();
-	scav.meleeAttack("enemy11");
+	scav.meleeAttack("enemy");
 
+	std::cout << std::endl << "-- Instantiate ClapTrap" << std::endl;
 	ClapTrap	clap("John");
-	NinjaTrap	ninja("Henry");
-	ninja.ninjaShoebox(clap);
-	ninja.ninjaShoebox(frag);
-	ninja.ninjaShoebox(scav);
-	ninja.ninjaShoebox(ninja);
-	ninja.rangedAttack("enemy12");
-	ninja.meleeAttack("enemy13");
 
+	std::cout << std::endl << "-- Instantiate NinjaTrap" << std::endl;
+	NinjaTrap	ninja("Henry");
+
+	std::cout << std::endl << "-- Tests for NinjaTrap" << std::endl;
+	ninja.meleeAttack("enemy");
+	ninja.rangedAttack("enemy");
+	ninja.takeDamage(30);
+	ninja.takeDamage(30);
+	ninja.takeDamage(30);
+	ninja.takeDamage(30);
+	ninja.takeDamage(30);
+	ninja.beRepaired(40);
+	ninja.beRepaired(100);
+	std::cout << "--- For clap == John" << std::endl;
+	ninja.ninjaShoebox(clap);
+	std::cout << "--- For frag == Jack" << std::endl;
+	ninja.ninjaShoebox(frag);
+	std::cout << "--- For scav == Jenny" << std::endl;
+	ninja.ninjaShoebox(scav);
+	std::cout << "--- For ninja == Henry" << std::endl;
+	ninja.ninjaShoebox(ninja);
+
+	std::cout << std::endl << "-- Instantiate SuperTrap" << std::endl;
 	SuperTrap	super("Supa");
-	super.rangedAttack("enemy14");
-	super.meleeAttack("enemy15");
+	std::cout << std::endl << "-- Tests for SuperTrap" << std::endl;
+	super.rangedAttack("enemy");
+	super.meleeAttack("enemy");
 	return 0;
 }
