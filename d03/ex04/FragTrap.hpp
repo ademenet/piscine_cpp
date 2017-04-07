@@ -17,7 +17,6 @@ public:
 protected:
 	FragTrap(void);
 
-private:
 	static const int fraghitpoints				= 100;
 	static const int fragmaxhitpoints			= 100;
 	static const int fragenergypoints			= 100;
