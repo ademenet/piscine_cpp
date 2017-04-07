@@ -17,11 +17,11 @@ public:
 
 	virtual void attack(void) const = 0; // This transforms AWeapon to abstract class
 
-protected:
-	std::string		_name;
-	int				_apcost;
 	int				_damage;
+	int				_apcost;
+	std::string		_name;
 
+protected:
 	AWeapon(void);
 
 private:

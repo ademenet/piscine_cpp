@@ -15,8 +15,9 @@ public:
 	int getHP() const;
 	virtual void takeDamage(int);
 
-protected:
 	int					_hp;
+
+protected:
 	std::string			_type;
 
 	Enemy(void);
