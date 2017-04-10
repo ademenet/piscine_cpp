@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T14:39:14+02:00
+ * @Last modified time: 2017-04-10T16:26:22+02:00
  */
 
 #ifndef BUREAUCRAT_HPP
@@ -29,14 +29,22 @@ public:
     void decrementGrade();
     std::string display() const;
 
-    /* Classes for exceptions */
-    struct GradeTooLowException : public std::exception {
-        // TODO mettre en Coplien
+    /* Exceptions */
+    class GradeTooLowException : public std::exception {
+        public:
+            GradeTooLowException();
+            virtual ~GradeTooLowException() throw();
+            GradeTooLowException(Bureaucrat::GradeTooLowException const &src);
+            GradeTooLowException &operator=(GradeTooLowException const &rhs);
             virtual const char * what() const throw();
     };
-    struct GradeTooHighException : public std::exception {
-        // TODO mettre en Coplien
-        virtual const char * what() const throw();
+    class GradeTooHighException : public std::exception {
+        public:
+            GradeTooHighException();
+            virtual ~GradeTooHighException() throw();
+            GradeTooHighException(GradeTooHighException const &src);
+            GradeTooHighException &operator=(GradeTooHighException const &rhs);
+            virtual const char * what() const throw();
     };
 
 private:

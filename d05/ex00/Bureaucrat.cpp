@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T14:20:14+02:00
+ * @Last modified time: 2017-04-10T16:26:43+02:00
  */
 
 #include "Bureaucrat.hpp"
@@ -31,9 +31,7 @@ Bureaucrat::~Bureaucrat(void) {
 }
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs) {
-    if (this != &rhs) {
-
-    }
+    if (this != &rhs) { }
     return *this;
 }
 
@@ -62,8 +60,45 @@ void Bureaucrat::decrementGrade() {
 }
 
 /* Exceptions */
+
+Bureaucrat::GradeTooLowException::GradeTooLowException() {
+    return;
+}
+
+Bureaucrat::GradeTooLowException::~GradeTooLowException() throw() {
+    return;
+}
+
+Bureaucrat::GradeTooLowException::GradeTooLowException(GradeTooLowException const &src) {
+    *this = src;
+    return;
+}
+
+Bureaucrat::GradeTooLowException &Bureaucrat::GradeTooLowException::operator=(Bureaucrat::GradeTooLowException const &rhs) {
+    if (this != &rhs) { }
+    return *this;
+}
+
 const char *Bureaucrat::GradeTooLowException::what() const throw() {
     return "ERROR: Grade is too low";
+}
+
+Bureaucrat::GradeTooHighException::GradeTooHighException() {
+    return;
+}
+
+Bureaucrat::GradeTooHighException::~GradeTooHighException() throw() {
+    return;
+}
+
+Bureaucrat::GradeTooHighException::GradeTooHighException(GradeTooHighException const &src) {
+    *this = src;
+    return;
+}
+
+Bureaucrat::GradeTooHighException &Bureaucrat::GradeTooHighException::operator=(Bureaucrat::GradeTooHighException const &rhs) {
+    if (this != &rhs) { }
+    return *this;
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
