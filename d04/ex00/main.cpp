@@ -11,5 +11,8 @@ int main(void) {
 	std::cout << robert << jim << joe;
 	robert.polymorph(jim);
 	robert.polymorph(joe);
+
+	Victim *bob = new Peon("bob");
+	delete bob;
 	return 0;
 }

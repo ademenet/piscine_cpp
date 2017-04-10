@@ -9,7 +9,7 @@ class Sorcerer {
 public:
 	Sorcerer(std::string name, std::string title);
 	Sorcerer(Sorcerer const &src);
-	~Sorcerer(void);
+	virtual ~Sorcerer(void);
 	Sorcerer &operator=(Sorcerer const &rhs);
 
 	void introduce(void) const;

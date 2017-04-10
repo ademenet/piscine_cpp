@@ -8,7 +8,7 @@ class Victim {
 public:
 	Victim(std::string name);
 	Victim(Victim const &src);
-	~Victim(void);
+	virtual ~Victim(void);
 	Victim &operator=(Victim const &rhs);
 
 	void introduce(void) const;
