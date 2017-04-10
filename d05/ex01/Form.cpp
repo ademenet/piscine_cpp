@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T17:25:45+02:00
+ * @Last modified time: 2017-04-10T17:46:47+02:00
  */
 
 #include "Form.hpp"
@@ -11,7 +11,7 @@ Form::Form(const std::string name, const unsigned int grade) : _name(name), _sig
     return;
 }
 
-Form::Form(Form const &src) : _grade(0) {
+Form::Form(Form const &src) : _name(src._name), _signature(false), _grade(src._grade) {
     *this = src;
     return;
 }
