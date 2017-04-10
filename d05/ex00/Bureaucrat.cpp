@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T18:38:57+02:00
+ * @Last modified time: 2017-04-10T18:55:27+02:00
  */
 
 #include "Bureaucrat.hpp"
@@ -12,10 +12,10 @@ Bureaucrat::Bureaucrat(void) {
 }
 
 Bureaucrat::Bureaucrat(const std::string name, unsigned int grade) : _name(name), _grade(grade) {
-    if (grade < 1) {
+    if (_grade < 1) {
         throw Bureaucrat::GradeTooLowException();
     }
-    else if (grade > 150) {
+    else if (_grade > 150) {
         throw Bureaucrat::GradeTooHighException();
     }
     return;

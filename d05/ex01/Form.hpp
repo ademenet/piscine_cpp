@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T18:34:23+02:00
+ * @Last modified time: 2017-04-10T18:53:32+02:00
  */
 
 #ifndef FORM_HPP
@@ -16,7 +16,7 @@ class Bureaucrat;
 class Form {
 
 public:
-    Form(const std::string name, const unsigned int grade);
+    Form(const std::string name, const unsigned int gradeRequired);
     Form(Form const &src);
     ~Form(void);
     Form &operator=(Form const &rhs);
@@ -44,7 +44,7 @@ public:
 
     /* Getters */
     std::string getName() const;
-    unsigned int getGrade() const;
+    unsigned int getGradeRequired() const;
     bool getSignature() const;
 
 private:
@@ -52,7 +52,7 @@ private:
 
     const std::string _name;
     bool _signature;
-    const unsigned int _grade;
+    const unsigned int _gradeRequired;
 
 };
 

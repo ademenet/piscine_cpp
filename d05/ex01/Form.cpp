@@ -2,16 +2,22 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T18:39:21+02:00
+ * @Last modified time: 2017-04-10T19:14:47+02:00
  */
 
 #include "Form.hpp"
 
-Form::Form(const std::string name, const unsigned int grade) : _name(name), _signature(false), _grade(grade) {
+Form::Form(const std::string name, const unsigned int gradeRequired) : _name(name), _signature(false), _gradeRequired(gradeRequired) {
+    if (_gradeRequired < 1) {
+        throw Bureaucrat::GradeTooLowException();
+    }
+    else if (gradeRequired > 150) {
+        throw Bureaucrat::GradeTooHighException();
+    }
     return;
 }
 
-Form::Form(Form const &src) : _name(src._name), _signature(false), _grade(src._grade) {
+Form::Form(Form const &src) : _name(src._name), _signature(false), _gradeRequired(src._gradeRequired) {
     *this = src;
     return;
 }
@@ -34,8 +40,8 @@ std::string Form::getName() const {
     return _name;
 }
 
-unsigned int Form::getGrade() const {
-    return this->_grade;
+unsigned int Form::getGradeRequired() const {
+    return _gradeRequired;
 }
 
 bool Form::getSignature() const {
@@ -44,7 +50,7 @@ bool Form::getSignature() const {
 
 /* Functionnal */
 void Form::beSigned(Bureaucrat &man) {
-    if (man.getGrade() > _grade)
+    if (man.getGrade() > _gradeRequired)
         throw Form::GradeTooLowException();
     _signature = true;
     return;
@@ -70,7 +76,7 @@ Form::GradeTooLowException &Form::GradeTooLowException::operator=(Form::GradeToo
 }
 
 const char *Form::GradeTooLowException::what() const throw() {
-    return "ERROR: Grade is too low";
+    return "grade is too low";
 }
 
 Form::GradeTooHighException::GradeTooHighException() {
@@ -92,14 +98,14 @@ Form::GradeTooHighException &Form::GradeTooHighException::operator=(Form::GradeT
 }
 
 const char *Form::GradeTooHighException::what() const throw() {
-    return "ERROR: Grade is too high";
+    return "grade is too high";
 }
 
 /* Operator overload */
 std::ostream &operator<<(std::ostream &o, Form const &rhs) {
     if (rhs.getSignature())
-        o << "Contract has been signed by " << rhs.getName() << ", grade " << rhs.getGrade();
+        o << rhs.getName() << " with grade " << rhs.getGradeRequired() << " has been signed.";
     else
-        o << "Contract hasn't been signed by " << rhs.getName() << ", grade " << rhs.getGrade();
+        o << rhs.getName() << " with grade " << rhs.getGradeRequired() << " hasn't been signed.";
     return o;
 }

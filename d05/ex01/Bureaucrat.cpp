@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T18:39:08+02:00
+ * @Last modified time: 2017-04-10T19:28:08+02:00
  */
 
 #include "Bureaucrat.hpp"
@@ -12,11 +12,11 @@ Bureaucrat::Bureaucrat(void) {
 }
 
 Bureaucrat::Bureaucrat(const std::string name, unsigned int grade) : _name(name), _grade(grade) {
-    if (grade < 1) {
-        throw Bureaucrat::GradeTooLowException();
+    if (_grade < 1) {
+        throw Form::GradeTooLowException();
     }
-    else if (grade > 150) {
-        throw Bureaucrat::GradeTooHighException();
+    else if (_grade > 150) {
+        throw Form::GradeTooHighException();
     }
     return;
 }
@@ -71,6 +71,17 @@ void Bureaucrat::decrementGrade() {
     return;
 }
 
+void Bureaucrat::signForm(Form &form) {
+    try {
+        form.beSigned(*this);
+        std::cout << _name << " signs " << form.getName() << std::endl;
+    }
+    catch (std::exception &e) {
+        std::cout << _name << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+    }
+    return;
+}
+
 /* Exceptions */
 Bureaucrat::GradeTooLowException::GradeTooLowException() {
     return;
@@ -91,7 +102,7 @@ Bureaucrat::GradeTooLowException &Bureaucrat::GradeTooLowException::operator=(Bu
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw() {
-    return "ERROR: Grade is too low";
+    return "grade is too low";
 }
 
 Bureaucrat::GradeTooHighException::GradeTooHighException() {
@@ -113,7 +124,7 @@ Bureaucrat::GradeTooHighException &Bureaucrat::GradeTooHighException::operator=(
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
-    return "ERROR: Grade is too high";
+    return "grade is too high";
 }
 
 /* Operator overload */

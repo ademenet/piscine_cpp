@@ -2,12 +2,13 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T14:21:25+02:00
+ * @Last modified time: 2017-04-10T19:10:47+02:00
  */
 
 #include "Bureaucrat.hpp"
 
 int main(void) {
+    std::cout << std::endl << "--- Tests ex00" << std::endl;
     try {
         Bureaucrat bureaucrat("Roger", 3);
         std::cout << bureaucrat << std::endl;
@@ -60,6 +61,28 @@ int main(void) {
         std::cout << e.what() << std::endl;
     }
 
-
+    std::cout << std::endl << "--- Tests ex01" << std::endl;
+    try {
+        Bureaucrat  homer("Homer", 4);
+        std::cout << homer << std::endl;
+        Form        form1("form1", 5);        
+        std::cout << form1 << std::endl;
+        homer.signForm(form1);
+        std::cout << form1 << std::endl;
+    }
+    catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
+    }
+    try {
+        Bureaucrat  homer("John", 7);
+        std::cout << homer << std::endl;
+        Form        form1("form1", 5);
+        std::cout << form1 << std::endl;
+        homer.signForm(form1);
+        std::cout << form1 << std::endl;
+    }
+    catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
+    }
     return 0;
 }

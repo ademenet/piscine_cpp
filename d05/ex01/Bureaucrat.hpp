@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T18:37:27+02:00
+ * @Last modified time: 2017-04-10T19:02:21+02:00
  */
 
 #ifndef BUREAUCRAT_HPP
@@ -11,6 +11,7 @@
 # include <iostream>
 # include <sstream>
 # include <stdexcept>
+# include "Form.hpp"
 
 class Form;
 
@@ -30,6 +31,7 @@ public:
     void incrementGrade();
     void decrementGrade();
     std::string display() const;
+    void signForm(Form &form);
 
     /* Exceptions */
     class GradeTooLowException : public std::exception {
