@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T17:25:26+02:00
+ * @Last modified time: 2017-04-10T18:20:16+02:00
  */
 
 #ifndef FORM_HPP
@@ -24,7 +24,7 @@ public:
         public:
             GradeTooLowException();
             virtual ~GradeTooLowException() throw();
-            GradeTooLowException(Bureaucrat::GradeTooLowException const &src);
+            GradeTooLowException(Form::GradeTooLowException const &src);
             GradeTooLowException &operator=(GradeTooLowException const &rhs);
             virtual const char * what() const throw();
     };
@@ -32,7 +32,7 @@ public:
         public:
             GradeTooHighException();
             virtual ~GradeTooHighException() throw();
-            GradeTooHighException(GradeTooHighException const &src);
+            GradeTooHighException(Form::GradeTooHighException const &src);
             GradeTooHighException &operator=(GradeTooHighException const &rhs);
             virtual const char * what() const throw();
     };

@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T17:46:47+02:00
+ * @Last modified time: 2017-04-10T18:23:30+02:00
  */
 
 #include "Form.hpp"
@@ -22,8 +22,8 @@ Form::~Form(void) {
 
 Form &Form::operator=(Form const &rhs) {
     if (this != &rhs) {
-        // _grade = rhs._grade;
-        // _name = rhs._name;
+        // _grade = rhs.getGrade();
+        // _name = rhs.getName();
         _signature = rhs._signature;
     }
     return *this;
@@ -35,7 +35,7 @@ std::string Form::getName() const {
 }
 
 unsigned int Form::getGrade() const {
-    return _grade;
+    return this->_grade;
 }
 
 bool Form::getSignature() const {
@@ -44,7 +44,6 @@ bool Form::getSignature() const {
 
 /* Functionnal */
 void Form::beSigned(Bureaucrat &man) {
-    // TODO faire un vrai check
     if (man.getGrade() == _grade)
         _signature = true;
     else if (man.getGrade() > 150)
@@ -55,47 +54,47 @@ void Form::beSigned(Bureaucrat &man) {
 }
 
 /* Exceptions */
-Bureaucrat::GradeTooLowException::GradeTooLowException() {
+Form::GradeTooLowException::GradeTooLowException() {
     return;
 }
 
-Bureaucrat::GradeTooLowException::~GradeTooLowException() throw() {
+Form::GradeTooLowException::~GradeTooLowException() throw() {
     return;
 }
 
-Bureaucrat::GradeTooLowException::GradeTooLowException(GradeTooLowException const &src) {
+Form::GradeTooLowException::GradeTooLowException(Form::GradeTooLowException const &src) {
     *this = src;
     return;
 }
 
-Bureaucrat::GradeTooLowException &Bureaucrat::GradeTooLowException::operator=(Bureaucrat::GradeTooLowException const &rhs) {
+Form::GradeTooLowException &Form::GradeTooLowException::operator=(Form::GradeTooLowException const &rhs) {
     if (this != &rhs) { }
     return *this;
 }
 
-const char *Bureaucrat::GradeTooLowException::what() const throw() {
+const char *Form::GradeTooLowException::what() const throw() {
     return "ERROR: Grade is too low";
 }
 
-Bureaucrat::GradeTooHighException::GradeTooHighException() {
+Form::GradeTooHighException::GradeTooHighException() {
     return;
 }
 
-Bureaucrat::GradeTooHighException::~GradeTooHighException() throw() {
+Form::GradeTooHighException::~GradeTooHighException() throw() {
     return;
 }
 
-Bureaucrat::GradeTooHighException::GradeTooHighException(GradeTooHighException const &src) {
+Form::GradeTooHighException::GradeTooHighException(Form::GradeTooHighException const &src) {
     *this = src;
     return;
 }
 
-Bureaucrat::GradeTooHighException &Bureaucrat::GradeTooHighException::operator=(Bureaucrat::GradeTooHighException const &rhs) {
+Form::GradeTooHighException &Form::GradeTooHighException::operator=(Form::GradeTooHighException const &rhs) {
     if (this != &rhs) { }
     return *this;
 }
 
-const char *Bureaucrat::GradeTooHighException::what() const throw() {
+const char *Form::GradeTooHighException::what() const throw() {
     return "ERROR: Grade is too high";
 }
 

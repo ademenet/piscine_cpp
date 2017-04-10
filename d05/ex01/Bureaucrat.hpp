@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T16:56:09+02:00
+ * @Last modified time: 2017-04-10T18:19:52+02:00
  */
 
 #ifndef BUREAUCRAT_HPP
@@ -42,7 +42,7 @@ public:
         public:
             GradeTooHighException();
             virtual ~GradeTooHighException() throw();
-            GradeTooHighException(GradeTooHighException const &src);
+            GradeTooHighException(Bureaucrat::GradeTooHighException const &src);
             GradeTooHighException &operator=(GradeTooHighException const &rhs);
             virtual const char * what() const throw();
     };
