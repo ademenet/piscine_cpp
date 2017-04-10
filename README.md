@@ -109,4 +109,20 @@ std::srand(time(NULL));
 std::cout << rand() << std::endl;
 ```
 
-### pointer to member of a class
+### std err
+
+Redirection is easy for debugging:
+
+```
+# In you function cpp
+[...]
+std::cerr << "Put something" << std::endl;
+[...]
+```
+
+``` bash
+# In your shell
+$> ./yourexec 2> error.log
+# Same same for std output
+$> ./yourexec 1> std.log
+```
