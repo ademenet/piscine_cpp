@@ -47,8 +47,10 @@ void Form::beSigned(Bureaucrat &man) {
     // TODO faire un vrai check
     if (man.getGrade() == _grade)
         _signature = true;
-    else
-        throw GradeTooHighException();
+    else if (man.getGrade() > 150)
+        throw Form::GradeTooHighException();
+    else if (man.getGrade() < 1)
+        throw Form::GradeTooLowException();
     return;
 }
 
