@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T16:26:43+02:00
+ * @Last modified time: 2017-04-10T18:38:57+02:00
  */
 
 #include "Bureaucrat.hpp"
@@ -33,6 +33,15 @@ Bureaucrat::~Bureaucrat(void) {
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs) {
     if (this != &rhs) { }
     return *this;
+}
+
+/* Getter */
+std::string Bureaucrat::getName() const {
+    return _name;
+}
+
+unsigned int Bureaucrat::getGrade() const {
+    return _grade;
 }
 
 /* Functionnal */
