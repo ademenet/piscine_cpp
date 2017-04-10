@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T18:20:16+02:00
+ * @Last modified time: 2017-04-10T18:34:23+02:00
  */
 
 #ifndef FORM_HPP
@@ -10,6 +10,8 @@
 
 # include <iostream>
 # include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form {
 
@@ -38,7 +40,7 @@ public:
     };
 
     /* Functionnal */
-    void beSigned(Bureaucrat &man); // TODO
+    void beSigned(Bureaucrat &man);
 
     /* Getters */
     std::string getName() const;

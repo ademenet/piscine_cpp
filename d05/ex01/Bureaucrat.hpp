@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T18:19:52+02:00
+ * @Last modified time: 2017-04-10T18:37:27+02:00
  */
 
 #ifndef BUREAUCRAT_HPP
@@ -11,6 +11,8 @@
 # include <iostream>
 # include <sstream>
 # include <stdexcept>
+
+class Form;
 
 class Bureaucrat {
 

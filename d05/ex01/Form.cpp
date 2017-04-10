@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T18:23:30+02:00
+ * @Last modified time: 2017-04-10T18:39:21+02:00
  */
 
 #include "Form.hpp"
@@ -44,12 +44,9 @@ bool Form::getSignature() const {
 
 /* Functionnal */
 void Form::beSigned(Bureaucrat &man) {
-    if (man.getGrade() == _grade)
-        _signature = true;
-    else if (man.getGrade() > 150)
-        throw Form::GradeTooHighException();
-    else if (man.getGrade() < 1)
+    if (man.getGrade() > _grade)
         throw Form::GradeTooLowException();
+    _signature = true;
     return;
 }
 
