@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T14:19:27+02:00
+ * @Last modified time: 2017-04-10T14:23:12+02:00
  */
 
 #ifndef BUREAUCRAT_HPP
@@ -31,10 +31,10 @@ public:
 
     /* Classes for exceptions */
     class GradeTooLowException : public std::exception {
-        const char * what() const throw();
+        virtual const char * what() const throw();
     };
     class GradeTooHighException : public std::exception {
-        const char * what() const throw();
+        virtual const char * what() const throw();
     };
 
 private:
