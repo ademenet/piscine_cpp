@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T20:52:08+02:00
+ * @Last modified time: 2017-04-11T21:11:26+02:00
  */
 
 #include "Form.hpp"
@@ -103,9 +103,9 @@ const char *Form::GradeTooHighException::what() const throw() {
 
 /* Operator overload */
 std::ostream &operator<<(std::ostream &o, Form const &rhs) {
-    if (rhs.getSignature())
-        o << rhs.getName() << ", grade for signature (" << rhs.getGradeRequired() << "), grade for executive (" << rhs.getGradeExecutive() <<  ") has been signed.";
+	if (rhs.getSignature())
+		o << rhs.getName() << ", grade for signature (" << rhs.getGradeRequired() << "), grade for executive (" << rhs.getGradeExecutive() <<  ") has been signed";
     else
-	o << rhs.getName() << ", grade for signature (" << rhs.getGradeRequired() << "), grade for executive (" << rhs.getGradeExecutive() <<  ") hasn't been signed.";
+		o << rhs.getName() << ", grade for signature (" << rhs.getGradeRequired() << "), grade for executive (" << rhs.getGradeExecutive() <<  ") hasn't been signed";
     return o;
 }

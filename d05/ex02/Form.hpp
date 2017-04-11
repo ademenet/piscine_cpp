@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T16:00:48+02:00
+ * @Last modified time: 2017-04-11T21:01:49+02:00
  */
 
 #ifndef FORM_HPP
@@ -62,11 +62,11 @@ protected:
     Form(void);
 
 private:
-    const std::string _name;
-    const std::string _target;
-    bool _signature;
-    const unsigned int _gradeRequired;
-    const unsigned int _gradeExecutive;
+    const std::string	_name;
+    const std::string	_target;
+    bool				_signature;
+    const unsigned int	_gradeRequired;
+    const unsigned int	_gradeExecutive;
 
 };
 

@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T16:33:59+02:00
+ * @Last modified time: 2017-04-11T21:11:32+02:00
  */
 
 #include "Bureaucrat.hpp"
@@ -13,10 +13,10 @@ Bureaucrat::Bureaucrat(void) {
 
 Bureaucrat::Bureaucrat(const std::string name, unsigned int grade) : _name(name), _grade(grade) {
     if (_grade < 1) {
-        throw Form::GradeTooLowException();
+        throw Bureaucrat::GradeTooHighException();
     }
     else if (_grade > 150) {
-        throw Form::GradeTooHighException();
+        throw Bureaucrat::GradeTooLowException();
     }
     return;
 }
@@ -31,10 +31,7 @@ Bureaucrat::~Bureaucrat(void) {
 }
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs) {
-    if (this != &rhs) {
-        // this->_name = rhs._name;
-        this->_grade = rhs._grade;
-    }
+    if (this != &rhs) { }
     return *this;
 }
 
@@ -48,17 +45,10 @@ unsigned int Bureaucrat::getGrade() const {
 }
 
 /* Functionnal */
-std::string Bureaucrat::display() const {
-    std::stringstream substr;
-    substr << _grade;
-    std::string str = _name + ", bureaucrat grade " + substr.str();
-    return str;
-}
-
 void Bureaucrat::incrementGrade() {
     _grade--;
     if (_grade < 1) {
-        throw Bureaucrat::GradeTooLowException();
+        throw Bureaucrat::GradeTooHighException();
     }
     return;
 }
@@ -66,7 +56,7 @@ void Bureaucrat::incrementGrade() {
 void Bureaucrat::decrementGrade() {
     _grade++;
     if (_grade > 150) {
-        throw Bureaucrat::GradeTooHighException();
+        throw Bureaucrat::GradeTooLowException();
     }
     return;
 }
@@ -142,6 +132,6 @@ const char *Bureaucrat::GradeTooHighException::what() const throw() {
 
 /* Operator overload */
 std::ostream &operator<<(std::ostream &o, Bureaucrat const &rhs) {
-    o << rhs.display() << std::endl;
+	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
     return o;
 }
