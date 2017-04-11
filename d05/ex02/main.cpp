@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T15:36:03+02:00
+ * @Last modified time: 2017-04-11T16:56:51+02:00
  */
 
 #include "Bureaucrat.hpp"
@@ -18,7 +18,7 @@ int main(void) {
     RobotomyRequestForm     robot("the love");
     ShrubberyCreationForm   tree("mars");
     PresidentialPardonForm  pardon("justin");
-    Bureaucrat              Marine("Marine", 46);
+    Bureaucrat              Marine("Marine", 148);
 
     std::cout << Marine;
     std::cout << pardon;

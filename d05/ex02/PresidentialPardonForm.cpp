@@ -2,12 +2,12 @@
  * @Author: ademenet
  * @Date:   2017-04-10T19:36:43+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T16:32:21+02:00
+ * @Last modified time: 2017-04-11T17:07:22+02:00
  */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string target) :  Form("President Zafod Beeblebrox", 25, 5), _target(target) {
+PresidentialPardonForm::PresidentialPardonForm(const std::string target) :  Form("President's Form", 25, 5), _target(target) {
     return;
 }
 

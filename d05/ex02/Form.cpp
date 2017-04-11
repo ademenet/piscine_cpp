@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T16:33:45+02:00
+ * @Last modified time: 2017-04-11T17:00:14+02:00
  */
 
 #include "Form.hpp"
@@ -130,9 +130,9 @@ const char *Form::BeSigned::what() const throw() {
 /* Operator overload */
 std::ostream &operator<<(std::ostream &o, Form const &rhs) {
     if (rhs.getSignature())
-        o << rhs.getName() << " with grade " << rhs.getGradeRequired() << " has been signed.";
+        o << rhs.getName() << " with grade " << rhs.getGradeRequired() << " and " << rhs.getGradeExecutive() <<  " grade for exec has been signed.";
     else
-        o << rhs.getName() << " with grade " << rhs.getGradeRequired() << " hasn't been signed.";
+        o << rhs.getName() << " with grade " << rhs.getGradeRequired() << " and " << rhs.getGradeExecutive() <<  " grade for exec hasn't been signed.";
     std::cout << std::endl;
     return o;
 }

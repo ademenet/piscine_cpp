@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T10:27:34+02:00
+ * @Last modified time: 2017-04-11T17:00:04+02:00
  */
 
 #include "Form.hpp"
@@ -42,6 +42,10 @@ std::string Form::getName() const {
 
 unsigned int Form::getGradeRequired() const {
     return _gradeRequired;
+}
+
+unsigned int Form::getGradeExecutive() const {
+    return _gradeExecutive;
 }
 
 bool Form::getSignature() const {
@@ -104,8 +108,8 @@ const char *Form::GradeTooHighException::what() const throw() {
 /* Operator overload */
 std::ostream &operator<<(std::ostream &o, Form const &rhs) {
     if (rhs.getSignature())
-        o << rhs.getName() << " with grade " << rhs.getGradeRequired() << " has been signed.";
+        o << rhs.getName() << " with grade " << rhs.getGradeRequired() << " and " << rhs.getGradeExecutive() <<  " grade for exec has been signed.";
     else
-        o << rhs.getName() << " with grade " << rhs.getGradeRequired() << " hasn't been signed.";
+        o << rhs.getName() << " with grade " << rhs.getGradeRequired() << " and " << rhs.getGradeExecutive() <<  " grade for exec hasn't been signed.";
     return o;
 }

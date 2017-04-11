@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T10:29:28+02:00
+ * @Last modified time: 2017-04-11T16:58:55+02:00
  */
 
 #ifndef FORM_HPP
@@ -45,6 +45,7 @@ public:
     /* Getters */
     std::string getName() const;
     unsigned int getGradeRequired() const;
+    unsigned int getGradeExecutive() const;
     bool getSignature() const;
 
 private:
