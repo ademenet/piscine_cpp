@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T10:32:11+02:00
+ * @Last modified time: 2017-04-11T15:32:36+02:00
  */
 
 #include "Form.hpp"
@@ -42,6 +42,10 @@ std::string Form::getName() const {
 
 unsigned int Form::getGradeRequired() const {
     return _gradeRequired;
+}
+
+unsigned int Form::getGradeExecutive() const {
+    return _gradeExecutive;
 }
 
 bool Form::getSignature() const {

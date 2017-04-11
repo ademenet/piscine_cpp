@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T09:57:57+02:00
+ * @Last modified time: 2017-04-11T15:32:12+02:00
  */
 
 #include "Bureaucrat.hpp"
@@ -79,6 +79,13 @@ void Bureaucrat::signForm(Form &form) {
     catch (std::exception &e) {
         std::cout << _name << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
     }
+    return;
+}
+
+void Bureaucrat::executeForm(Form const &form) {
+    if (_grade > form.getGradeExecutive())
+        throw Bureaucrat::GradeTooLowException();
+    std::cout << _name << " executes " << form.getName() << std::endl;
     return;
 }
 

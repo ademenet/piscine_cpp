@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T19:36:43+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T11:55:56+02:00
+ * @Last modified time: 2017-04-11T15:26:24+02:00
  */
 
 #include "RobotomyRequestForm.hpp"
@@ -11,8 +11,7 @@ RobotomyRequestForm::RobotomyRequestForm(void) {
     return;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string name, const unsigned int gradeRequired, const unsigned int gradeExecutive, std::string target) : Form(name, gradeRequired, gradeExecutive),
-                                                                                                                                       _target(target) {
+RobotomyRequestForm::RobotomyRequestForm(const std::string target) : Form("Robot", 72, 45), _target(target) {
     return;
 }
 
@@ -35,10 +34,13 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &r
 /* Functionnal */
 void RobotomyRequestForm::actionForm() {
     int randInt = rand() % 2;
+
+    std::cout << '\a';
     if (randInt == 0) {
-        
+        std::cout << _target << " has been robotized" << std::endl;
     }
     else {
+        std::cout << _target << " hasn't been robotized" << std::endl;
 
     }
     return;

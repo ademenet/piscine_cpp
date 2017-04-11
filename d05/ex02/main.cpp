@@ -2,37 +2,38 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T11:55:13+02:00
+ * @Last modified time: 2017-04-11T15:21:56+02:00
  */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main(void) {
-    std::srand(std::time(NULL));
+
     std::cout << "--- Tests ex02" << std::endl;
 
-    // TODO Tester PresidentialPardonForm
-    try {
-        Bureaucrat  homer("Homer", 4);
-    }
-    catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
+    RobotomyRequestForm     robot("the love");
+    ShrubberyCreationForm   tree("mars");
+    PresidentialPardonForm  pardon("justin");
+    Bureaucrat              Marine("Marine", 46);
 
-    // TODO Tester RobotomyRequestForm
-    try {
-        Bureaucrat  homer("Homer", 4);
-    }
-    catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
+    std::cout << Marine;
+    std::cout << pardon;
+    Marine.signForm(pardon);
+    std::cout << pardon;
+    std::cout << robot;
+    Marine.executeForm(robot);
+    Marine.signForm(robot);
+    std::cout << robot;
+    std::cout << tree;
+    Marine.executeForm(tree);
+    Marine.signForm(tree);
+    std::cout << tree;
+    Marine.executeForm(tree);
+    std::cout << robot;
 
-    // TODO Tester ShrubberyCreationForm
-    try {
-        Bureaucrat  homer("Homer", 4);
-    }
-    catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
     return 0;
 }

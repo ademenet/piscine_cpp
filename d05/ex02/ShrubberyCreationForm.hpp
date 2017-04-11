@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T19:36:43+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T11:45:51+02:00
+ * @Last modified time: 2017-04-11T15:26:33+02:00
  */
 
 #ifndef SHRUBBERYCREATIONFORM_HPP
@@ -16,7 +16,7 @@
 class ShrubberyCreationForm : public Form {
 
 public:
-    ShrubberyCreationForm(const std::string name, const unsigned int gradeRequired, const unsigned int gradeExecutive, std::string target);
+    ShrubberyCreationForm(const std::string target);
     ShrubberyCreationForm(ShrubberyCreationForm const &src);
     virtual ~ShrubberyCreationForm(void);
     ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
