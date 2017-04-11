@@ -2,23 +2,23 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T17:00:14+02:00
+ * @Last modified time: 2017-04-11T21:50:46+02:00
  */
 
 #include "Form.hpp"
 
 Form::Form(const std::string name, const unsigned int gradeRequired, const unsigned int gradeExecutive) : _name(name), _signature(false), _gradeRequired(gradeRequired), _gradeExecutive(gradeExecutive) {
-    if (_gradeRequired < 1) {
-        throw Bureaucrat::GradeTooLowException();
+    if (_gradeRequired < 1 || _gradeExecutive < 1) {
+        throw Form::GradeTooHighException();
     }
-    else if (gradeRequired > 150) {
-        throw Bureaucrat::GradeTooHighException();
+    else if (gradeRequired > 150 || _gradeExecutive > 150) {
+        throw Form::GradeTooLowException();
     }
     return;
 }
 
-Form::Form(Form const &src) : _name(src._name), _signature(false), _gradeRequired(src._gradeRequired), _gradeExecutive(src._gradeExecutive) {
-    *this = src;
+Form::Form(Form const &src) : _name(src._name), _signature(src._signature), _gradeRequired(src._gradeRequired), _gradeExecutive(src._gradeExecutive) {
+	*this = src;
     return;
 }
 
@@ -27,11 +27,7 @@ Form::~Form(void) {
 }
 
 Form &Form::operator=(Form const &rhs) {
-    if (this != &rhs) {
-        // _grade = rhs.getGrade();
-        // _name = rhs.getName();
-        _signature = rhs._signature;
-    }
+    if (this != &rhs) { }
     return *this;
 }
 
@@ -130,9 +126,8 @@ const char *Form::BeSigned::what() const throw() {
 /* Operator overload */
 std::ostream &operator<<(std::ostream &o, Form const &rhs) {
     if (rhs.getSignature())
-        o << rhs.getName() << " with grade " << rhs.getGradeRequired() << " and " << rhs.getGradeExecutive() <<  " grade for exec has been signed.";
-    else
-        o << rhs.getName() << " with grade " << rhs.getGradeRequired() << " and " << rhs.getGradeExecutive() <<  " grade for exec hasn't been signed.";
-    std::cout << std::endl;
+		o << rhs.getName() << ", grade for signature (" << rhs.getGradeRequired() << "), grade for executive (" << rhs.getGradeExecutive() <<  ") has been signed";
+	else
+		o << rhs.getName() << ", grade for signature (" << rhs.getGradeRequired() << "), grade for executive (" << rhs.getGradeExecutive() <<  ") hasn't been signed";
     return o;
 }

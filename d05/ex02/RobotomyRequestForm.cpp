@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T19:36:43+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T21:38:27+02:00
+ * @Last modified time: 2017-04-11T22:01:53+02:00
  */
 
 #include "RobotomyRequestForm.hpp"
@@ -33,7 +33,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
 
     int randInt = rand() % 2;
 
-    std::cout << '\a';
+    std::cout << "BZZZZZ BZZZZZ BZZZZZ ";
     if (randInt == 0) {
         std::cout << _target << " has been robotized" << std::endl;
     }
