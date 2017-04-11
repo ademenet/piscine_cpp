@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T19:02:21+02:00
+ * @Last modified time: 2017-04-11T20:31:56+02:00
  */
 
 #ifndef BUREAUCRAT_HPP
@@ -30,7 +30,6 @@ public:
     /* Functionnal */
     void incrementGrade();
     void decrementGrade();
-    std::string display() const;
     void signForm(Form &form);
 
     /* Exceptions */

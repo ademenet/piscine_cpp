@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T20:28:26+02:00
+ * @Last modified time: 2017-04-11T20:36:47+02:00
  */
 
 #include "Bureaucrat.hpp"
@@ -109,6 +109,6 @@ const char *Bureaucrat::GradeTooHighException::what() const throw() {
 
 /* Operator overload */
 std::ostream &operator<<(std::ostream &o, Bureaucrat const &rhs) {
-    o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
+	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
     return o;
 }

@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T11:24:40+02:00
+ * @Last modified time: 2017-04-11T20:50:43+02:00
  */
 
 #include "Bureaucrat.hpp"
@@ -10,78 +10,61 @@
 // TODO make a better << operator status display (add grade executive)
 
 int main(void) {
-    std::cout << std::endl << "--- Tests ex00" << std::endl;
+    std::cout << "--- Tests form errors on construction" << std::endl;
     try {
-        Bureaucrat bureaucrat("Roger", 3);
-        std::cout << bureaucrat << std::endl;
-        bureaucrat.incrementGrade();
-        std::cout << bureaucrat << std::endl;
-        bureaucrat.decrementGrade();
-        std::cout << bureaucrat << std::endl;
+		std::cout << "Form form(\"Form\", 155, 26);" << std::endl;
+        Form form("Form", 155, 26);
+        std::cout << form << std::endl;
     }
     catch (std::exception &e) {
         std::cout << e.what() << std::endl;
     }
-    try {
-        Bureaucrat bureaucrat("Roger", 3);
-        std::cout << bureaucrat << std::endl;
-        bureaucrat.incrementGrade();
-        std::cout << bureaucrat << std::endl;
-        bureaucrat.incrementGrade();
-        std::cout << bureaucrat << std::endl;
-        bureaucrat.incrementGrade();
-        std::cout << bureaucrat << std::endl;
+	try {
+		std::cout << "Form form(\"Form\", 0, 26);" << std::endl;
+        Form form("Form", 0, 26);
+        std::cout << form << std::endl;
     }
     catch (std::exception &e) {
         std::cout << e.what() << std::endl;
     }
-    try {
-        Bureaucrat bureaucrat("Roger", 148);
-        std::cout << bureaucrat << std::endl;
-        bureaucrat.decrementGrade();
-        std::cout << bureaucrat << std::endl;
-        bureaucrat.decrementGrade();
-        std::cout << bureaucrat << std::endl;
-        bureaucrat.decrementGrade();
-        std::cout << bureaucrat << std::endl;
+	try {
+		std::cout << "Form form(\"Form\", 26, 155);" << std::endl;
+        Form form("Form", 26, 155);
+        std::cout << form << std::endl;
     }
     catch (std::exception &e) {
         std::cout << e.what() << std::endl;
     }
-    try {
-        Bureaucrat bureaucrat("Roger", 155);
-        std::cout << bureaucrat << std::endl;
-    }
-    catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
-    try {
-        Bureaucrat bureaucrat("Roger", 0);
-        std::cout << bureaucrat << std::endl;
+	try {
+		std::cout << "Form form(\"Form\", 5, 0);" << std::endl;
+        Form form("Form", 5, 0);
+        std::cout << form << std::endl;
     }
     catch (std::exception &e) {
         std::cout << e.what() << std::endl;
     }
 
-    std::cout << std::endl << "--- Tests ex01" << std::endl;
+    std::cout << "--- Bureaucrat can't signed" << std::endl;
     try {
-        Bureaucrat  homer("Homer", 4);
-        std::cout << homer << std::endl;
-        Form        form1("form1", 5, 4);
-        std::cout << form1 << std::endl;
-        homer.signForm(form1);
-        std::cout << form1 << std::endl;
+        Bureaucrat  man("Man", 25);
+        std::cout << man << std::endl;
+        Form        form("form", 10, 4);
+        std::cout << form << std::endl;
+        man.signForm(form);
+        std::cout << form << std::endl;
     }
     catch (std::exception &e) {
         std::cout << e.what() << std::endl;
     }
+
+	std::cout << "--- Bureaucrat can sign" << std::endl;
     try {
-        Bureaucrat  homer("John", 7);
-        std::cout << homer << std::endl;
-        Form        form1("form1", 5, 4);
-        std::cout << form1 << std::endl;
-        homer.signForm(form1);
-        std::cout << form1 << std::endl;
+        Bureaucrat  man("John", 7);
+        std::cout << man << std::endl;
+        Form        form("form", 25, 4);
+        std::cout << form << std::endl;
+        man.signForm(form);
+        std::cout << form << std::endl;
     }
     catch (std::exception &e) {
         std::cout << e.what() << std::endl;
