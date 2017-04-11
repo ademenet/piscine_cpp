@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T16:26:22+02:00
+ * @Last modified time: 2017-04-11T20:21:51+02:00
  */
 
 #ifndef BUREAUCRAT_HPP
@@ -27,7 +27,6 @@ public:
     /* Functionnal */
     void incrementGrade();
     void decrementGrade();
-    std::string display() const;
 
     /* Exceptions */
     class GradeTooLowException : public std::exception {

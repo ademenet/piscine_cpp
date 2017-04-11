@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T18:55:27+02:00
+ * @Last modified time: 2017-04-11T20:28:26+02:00
  */
 
 #include "Bureaucrat.hpp"
@@ -13,10 +13,10 @@ Bureaucrat::Bureaucrat(void) {
 
 Bureaucrat::Bureaucrat(const std::string name, unsigned int grade) : _name(name), _grade(grade) {
     if (_grade < 1) {
-        throw Bureaucrat::GradeTooLowException();
+        throw Bureaucrat::GradeTooHighException();
     }
     else if (_grade > 150) {
-        throw Bureaucrat::GradeTooHighException();
+        throw Bureaucrat::GradeTooLowException();
     }
     return;
 }
@@ -45,17 +45,10 @@ unsigned int Bureaucrat::getGrade() const {
 }
 
 /* Functionnal */
-std::string Bureaucrat::display() const {
-    std::stringstream substr;
-    substr << _grade;
-    std::string str = _name + ", bureaucrat grade " + substr.str();
-    return str;
-}
-
 void Bureaucrat::incrementGrade() {
     _grade--;
     if (_grade < 1) {
-        throw Bureaucrat::GradeTooLowException();
+        throw Bureaucrat::GradeTooHighException();
     }
     return;
 }
@@ -63,7 +56,7 @@ void Bureaucrat::incrementGrade() {
 void Bureaucrat::decrementGrade() {
     _grade++;
     if (_grade > 150) {
-        throw Bureaucrat::GradeTooHighException();
+        throw Bureaucrat::GradeTooLowException();
     }
     return;
 }
@@ -89,7 +82,7 @@ Bureaucrat::GradeTooLowException &Bureaucrat::GradeTooLowException::operator=(Bu
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw() {
-    return "ERROR: Grade is too low";
+    return "grade is too low";
 }
 
 Bureaucrat::GradeTooHighException::GradeTooHighException() {
@@ -111,11 +104,11 @@ Bureaucrat::GradeTooHighException &Bureaucrat::GradeTooHighException::operator=(
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
-    return "ERROR: Grade is too high";
+    return "grade is too high";
 }
 
 /* Operator overload */
 std::ostream &operator<<(std::ostream &o, Bureaucrat const &rhs) {
-    o << rhs.display();
+    o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
     return o;
 }
