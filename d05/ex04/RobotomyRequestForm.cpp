@@ -2,13 +2,14 @@
  * @Author: ademenet
  * @Date:   2017-04-10T19:36:43+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T17:07:59+02:00
+ * @Last modified time: 2017-04-11T22:03:59+02:00
  */
 
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string target) : Form("Robot's form", 72, 45), _target(target) {
-    return;
+	std::srand(std::time(NULL));
+	return;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src) : Form(src) {
@@ -32,7 +33,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
 
     int randInt = rand() % 2;
 
-    std::cout << '\a';
+	std::cout << "BZZZZZ BZZZZZ BZZZZZ ";
     if (randInt == 0) {
         std::cout << _target << " has been robotized" << std::endl;
     }
