@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-11T17:32:10+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T18:26:49+02:00
+ * @Last modified time: 2017-04-11T18:32:39+02:00
  */
 
 #include "OfficeBlock.hpp"
@@ -41,6 +41,7 @@ void OfficeBlock::setExecutor(Bureaucrat &executor) {
 }
 
 void OfficeBlock::doBureaucracy(std::string formName, std::string targetName) {
+	// Error for assignment
 	Form *newForm;
 	newForm = _intern->makeForm(formName, targetName);
 	_signer->signForm(*newForm);
