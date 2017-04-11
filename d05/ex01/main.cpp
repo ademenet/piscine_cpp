@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T19:10:47+02:00
+ * @Last modified time: 2017-04-11T10:28:09+02:00
  */
 
 #include "Bureaucrat.hpp"
@@ -65,7 +65,7 @@ int main(void) {
     try {
         Bureaucrat  homer("Homer", 4);
         std::cout << homer << std::endl;
-        Form        form1("form1", 5);        
+        Form        form1("form1", 5, 4);
         std::cout << form1 << std::endl;
         homer.signForm(form1);
         std::cout << form1 << std::endl;
@@ -76,7 +76,7 @@ int main(void) {
     try {
         Bureaucrat  homer("John", 7);
         std::cout << homer << std::endl;
-        Form        form1("form1", 5);
+        Form        form1("form1", 5, 4);
         std::cout << form1 << std::endl;
         homer.signForm(form1);
         std::cout << form1 << std::endl;

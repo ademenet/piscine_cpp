@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T09:36:45+02:00
+ * @Last modified time: 2017-04-11T10:29:28+02:00
  */
 
 #ifndef FORM_HPP
@@ -16,7 +16,7 @@ class Bureaucrat;
 class Form {
 
 public:
-    Form(const std::string name, const unsigned int gradeRequired);
+    Form(const std::string name, const unsigned int gradeRequired, const unsigned int gradeExecutive);
     Form(Form const &src);
     ~Form(void);
     Form &operator=(Form const &rhs);

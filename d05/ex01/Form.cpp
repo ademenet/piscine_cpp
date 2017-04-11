@@ -2,12 +2,12 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T19:14:47+02:00
+ * @Last modified time: 2017-04-11T10:27:34+02:00
  */
 
 #include "Form.hpp"
 
-Form::Form(const std::string name, const unsigned int gradeRequired) : _name(name), _signature(false), _gradeRequired(gradeRequired) {
+Form::Form(const std::string name, const unsigned int gradeRequired, const unsigned int gradeExecutive) : _name(name), _signature(false), _gradeRequired(gradeRequired), _gradeExecutive(gradeExecutive) {
     if (_gradeRequired < 1) {
         throw Bureaucrat::GradeTooLowException();
     }
@@ -17,7 +17,7 @@ Form::Form(const std::string name, const unsigned int gradeRequired) : _name(nam
     return;
 }
 
-Form::Form(Form const &src) : _name(src._name), _signature(false), _gradeRequired(src._gradeRequired) {
+Form::Form(Form const &src) : _name(src._name), _signature(false), _gradeRequired(src._gradeRequired), _gradeExecutive(src._gradeExecutive) {
     *this = src;
     return;
 }
