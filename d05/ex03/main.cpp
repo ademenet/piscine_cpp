@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T22:00:06+02:00
+ * @Last modified time: 2017-04-11T23:15:12+02:00
  */
 
 #include "Bureaucrat.hpp"
@@ -26,7 +26,12 @@ int main(void) {
     rrf = someRandomIntern3.makeForm("Shrubbery's form", "Triz");
 	std::cout << "--- Error" << std::endl;
     Intern	someRandomIntern4;
-    rrf = someRandomIntern4.makeForm("Jacadi's form", "Triz");
+	try {
+	    rrf = someRandomIntern4.makeForm("Jacadi's form", "Triz");
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 
 	std::cout << "--- Proof" << std::endl;
 	Bureaucrat Bizou("Bizou", 1);

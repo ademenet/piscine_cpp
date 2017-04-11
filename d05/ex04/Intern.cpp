@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-11T16:36:27+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T17:27:08+02:00
+ * @Last modified time: 2017-04-11T23:10:43+02:00
  */
 
  #include "Intern.hpp"
@@ -38,9 +38,31 @@ Form *Intern::makeForm(std::string formName, std::string formTarget) {
 		newForm = new ShrubberyCreationForm(formTarget);
 	}
 	else {
-		std::cout << formName << " doesn't exist" << std::endl;
-		return NULL;
+		throw Intern::FormDoNotExists();
 	}
 	std::cout << "Intern creates " << newForm->getName() << std::endl;
 	return newForm;
+}
+
+/* Exceptions */
+Intern::FormDoNotExists::FormDoNotExists() {
+    return;
+}
+
+Intern::FormDoNotExists::~FormDoNotExists() throw() {
+    return;
+}
+
+Intern::FormDoNotExists::FormDoNotExists(FormDoNotExists const &src) {
+    *this = src;
+    return;
+}
+
+Intern::FormDoNotExists &Intern::FormDoNotExists::operator=(Intern::FormDoNotExists const &rhs) {
+    if (this != &rhs) { }
+    return *this;
+}
+
+const char *Intern::FormDoNotExists::what() const throw() {
+    return "form do not exist";
 }
