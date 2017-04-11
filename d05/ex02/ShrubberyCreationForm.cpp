@@ -2,21 +2,17 @@
  * @Author: ademenet
  * @Date:   2017-04-10T19:36:43+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T16:01:45+02:00
+ * @Last modified time: 2017-04-11T16:32:34+02:00
  */
 
 #include "ShrubberyCreationForm.hpp"
-
-ShrubberyCreationForm::ShrubberyCreationForm(void) {
-    return;
-}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) : Form("Shrubbery", 145, 137), _target(target) {
     return;
 }
 
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src) {
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src) : Form(src) {
     *this = src;
     return;
 }

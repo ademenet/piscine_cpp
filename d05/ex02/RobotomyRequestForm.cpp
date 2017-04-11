@@ -2,20 +2,16 @@
  * @Author: ademenet
  * @Date:   2017-04-10T19:36:43+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T16:01:48+02:00
+ * @Last modified time: 2017-04-11T16:32:31+02:00
  */
 
 #include "RobotomyRequestForm.hpp"
-
-RobotomyRequestForm::RobotomyRequestForm(void) {
-    return;
-}
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string target) : Form("Robot", 72, 45), _target(target) {
     return;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src) {
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src) : Form(src) {
     *this = src;
     return;
 }

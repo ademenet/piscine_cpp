@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T15:48:09+02:00
+ * @Last modified time: 2017-04-11T16:33:45+02:00
  */
 
 #include "Form.hpp"
@@ -133,5 +133,6 @@ std::ostream &operator<<(std::ostream &o, Form const &rhs) {
         o << rhs.getName() << " with grade " << rhs.getGradeRequired() << " has been signed.";
     else
         o << rhs.getName() << " with grade " << rhs.getGradeRequired() << " hasn't been signed.";
+    std::cout << std::endl;
     return o;
 }
