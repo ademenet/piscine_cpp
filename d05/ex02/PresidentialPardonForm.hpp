@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T19:36:43+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T15:41:25+02:00
+ * @Last modified time: 2017-04-11T16:01:36+02:00
  */
 
 #ifndef PRESIDENTIALPARDONFORM_HPP
@@ -20,7 +20,7 @@ public:
     PresidentialPardonForm &operator=(PresidentialPardonForm const &rhs);
 
     /* Functionnal */
-    virtual void execute(Bureaucrat const &executor);
+    virtual void execute(Bureaucrat const &executor) const;
 
 private:
     PresidentialPardonForm(void);

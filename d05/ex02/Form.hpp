@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T15:47:11+02:00
+ * @Last modified time: 2017-04-11T16:00:48+02:00
  */
 
 #ifndef FORM_HPP
@@ -50,6 +50,7 @@ public:
 
     /* Functionnal */
     void beSigned(Bureaucrat &man);
+    virtual void execute(Bureaucrat const &executor) const = 0; // Abstract
 
     /* Getters */
     std::string getName() const;
@@ -59,7 +60,6 @@ public:
 
 protected:
     Form(void);
-    virtual void execute(Bureaucrat const &executor) = 0; // Abstract
 
 private:
     const std::string _name;

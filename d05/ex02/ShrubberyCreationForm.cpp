@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T19:36:43+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T15:52:46+02:00
+ * @Last modified time: 2017-04-11T16:01:45+02:00
  */
 
 #include "ShrubberyCreationForm.hpp"
@@ -31,10 +31,8 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 }
 
 /* Functionnal */
-void ShrubberyCreationForm::execute(Bureaucrat const &executor) {
-    if (getSignature())
-        throw Form::BeSigned();
-    else if (executor.getGrade() > getGradeExecutive())
+void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
+    if (executor.getGrade() > getGradeExecutive())
         throw Form::GradeTooLowException();
 
     std::ofstream	out(_target + "_shrubbery");

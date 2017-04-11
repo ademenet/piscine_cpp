@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T15:44:07+02:00
+ * @Last modified time: 2017-04-11T16:02:15+02:00
  */
 
 #include "Bureaucrat.hpp"
@@ -83,10 +83,15 @@ void Bureaucrat::signForm(Form &form) {
 }
 
 void Bureaucrat::executeForm(Form const &form) {
-    // try catch verifier si signe et faire throw
-    if (_grade > form.getGradeExecutive())
-        throw Bureaucrat::GradeTooLowException();
-    std::cout << _name << " executes " << form.getName() << std::endl;
+    try {
+        if (form.getSignature())
+            throw Form::BeSigned();
+        form.execute(*this);
+        std::cout << _name << " executes " << form.getName() << std::endl;
+    }
+    catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
+    }
     return;
 }
 

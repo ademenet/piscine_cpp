@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T19:36:43+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T15:52:41+02:00
+ * @Last modified time: 2017-04-11T16:01:48+02:00
  */
 
 #include "RobotomyRequestForm.hpp"
@@ -30,10 +30,8 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &r
 }
 
 /* Functionnal */
-void RobotomyRequestForm::execute(Bureaucrat const &executor) {
-    if (getSignature())
-        throw Form::BeSigned();
-    else if (executor.getGrade() > getGradeExecutive())
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
+    if (executor.getGrade() > getGradeExecutive())
         throw Form::GradeTooLowException();
 
     int randInt = rand() % 2;
