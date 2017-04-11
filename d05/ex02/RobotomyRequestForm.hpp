@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T19:36:43+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T15:39:33+02:00
+ * @Last modified time: 2017-04-11T15:41:21+02:00
  */
 
 #ifndef ROBOTOMYREQUESTFORM_HPP
@@ -20,7 +20,7 @@ public:
     RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
 
     /* Functionnal */
-    virtual void execute();
+    virtual void execute(Bureaucrat const &executor);
 
 private:
     RobotomyRequestForm(void);

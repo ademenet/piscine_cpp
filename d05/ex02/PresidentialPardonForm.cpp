@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T19:36:43+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T15:38:47+02:00
+ * @Last modified time: 2017-04-11T15:52:26+02:00
  */
 
 #include "PresidentialPardonForm.hpp"
@@ -30,7 +30,12 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm
 }
 
 /* Functionnal */
-void PresidentialPardonForm::execute() {
+void PresidentialPardonForm::execute(Bureaucrat const &executor) {
+    if (getSignature())
+        throw Form::BeSigned();
+    else if (executor.getGrade() > getGradeExecutive())
+        throw Form::GradeTooLowException();
+
     std::cout << _target << " has been pardoned by Zafod Beeblebrox" << std::endl;
     return;
 }

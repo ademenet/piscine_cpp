@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T15:32:36+02:00
+ * @Last modified time: 2017-04-11T15:48:09+02:00
  */
 
 #include "Form.hpp"
@@ -103,6 +103,28 @@ Form::GradeTooHighException &Form::GradeTooHighException::operator=(Form::GradeT
 
 const char *Form::GradeTooHighException::what() const throw() {
     return "grade is too high";
+}
+
+Form::BeSigned::BeSigned() {
+    return;
+}
+
+Form::BeSigned::~BeSigned() throw() {
+    return;
+}
+
+Form::BeSigned::BeSigned(Form::BeSigned const &src) {
+    *this = src;
+    return;
+}
+
+Form::BeSigned &Form::BeSigned::operator=(Form::BeSigned const &rhs) {
+    if (this != &rhs) { }
+    return *this;
+}
+
+const char *Form::BeSigned::what() const throw() {
+    return "form is not signed";
 }
 
 /* Operator overload */
