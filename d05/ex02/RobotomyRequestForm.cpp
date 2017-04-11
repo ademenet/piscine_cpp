@@ -2,12 +2,13 @@
  * @Author: ademenet
  * @Date:   2017-04-10T19:36:43+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T21:22:21+02:00
+ * @Last modified time: 2017-04-11T21:38:27+02:00
  */
 
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string target) : Form("Robot's form", 72, 45), _target(target) {
+	std::srand(std::time(NULL));
     return;
 }
 
@@ -29,8 +30,6 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &r
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
     if (executor.getGrade() > getGradeExecutive())
         throw Form::GradeTooLowException();
-	if (Form::getSignature())
-		throw Form::BeSigned();
 
     int randInt = rand() % 2;
 

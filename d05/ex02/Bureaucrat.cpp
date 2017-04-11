@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T21:11:32+02:00
+ * @Last modified time: 2017-04-11T21:36:27+02:00
  */
 
 #include "Bureaucrat.hpp"
@@ -74,7 +74,7 @@ void Bureaucrat::signForm(Form &form) {
 
 void Bureaucrat::executeForm(Form const &form) {
     try {
-        if (form.getSignature())
+        if (!form.getSignature())
             throw Form::BeSigned();
         form.execute(*this);
         std::cout << _name << " executes " << form.getName() << std::endl;

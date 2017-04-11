@@ -2,13 +2,13 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T21:11:37+02:00
+ * @Last modified time: 2017-04-11T21:38:20+02:00
  */
 
 #include "Form.hpp"
 
 Form::Form(const std::string name, const unsigned int gradeRequired, const unsigned int gradeExecutive) : _name(name), _signature(false), _gradeRequired(gradeRequired), _gradeExecutive(gradeExecutive) {
-    if (_gradeRequired < 1 || _gradeExecutive < 1) {
+	if (_gradeRequired < 1 || _gradeExecutive < 1) {
         throw Form::GradeTooHighException();
     }
     else if (gradeRequired > 150 || _gradeExecutive > 150) {

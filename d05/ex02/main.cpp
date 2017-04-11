@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T21:26:34+02:00
+ * @Last modified time: 2017-04-11T21:41:37+02:00
  */
 
 #include "Bureaucrat.hpp"
@@ -17,7 +17,7 @@ int main(void) {
     PresidentialPardonForm  pardon("justin");
     Bureaucrat              Marine("Marine", 1);
 
-	std::cout << "--- Change Marine's grade to test" << std::endl;
+	std::cout << "--- Change Marine's grade to test (try: 1, 40, 130, 150)" << std::endl;
 	std::cout << Marine << std::endl;
 
 	std::cout << "--- PresidentialPardonForm" << std::endl;
