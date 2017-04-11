@@ -2,10 +2,12 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T10:28:09+02:00
+ * @Last modified time: 2017-04-11T11:24:40+02:00
  */
 
 #include "Bureaucrat.hpp"
+
+// TODO make a better << operator status display (add grade executive)
 
 int main(void) {
     std::cout << std::endl << "--- Tests ex00" << std::endl;

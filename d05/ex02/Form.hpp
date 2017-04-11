@@ -2,13 +2,14 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-10T18:53:32+02:00
+ * @Last modified time: 2017-04-11T11:52:26+02:00
  */
 
 #ifndef FORM_HPP
 # define FORM_HPP
 
 # include <iostream>
+# include <fstream>
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -16,9 +17,9 @@ class Bureaucrat;
 class Form {
 
 public:
-    Form(const std::string name, const unsigned int gradeRequired);
+    Form(const std::string name, const unsigned int gradeRequired, const unsigned int gradeExecutive);
     Form(Form const &src);
-    ~Form(void);
+    virtual ~Form(void);
     Form &operator=(Form const &rhs);
 
     /* Exceptions */
@@ -47,12 +48,16 @@ public:
     unsigned int getGradeRequired() const;
     bool getSignature() const;
 
-private:
+protected:
     Form(void);
+    virtual void actionForm() = 0; // Abstract
 
+private:
     const std::string _name;
+    const std::string _target;
     bool _signature;
     const unsigned int _gradeRequired;
+    const unsigned int _gradeExecutive;
 
 };
 
