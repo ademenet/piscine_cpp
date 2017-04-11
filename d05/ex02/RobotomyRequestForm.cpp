@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T19:36:43+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T15:26:24+02:00
+ * @Last modified time: 2017-04-11T15:38:40+02:00
  */
 
 #include "RobotomyRequestForm.hpp"
@@ -25,14 +25,12 @@ RobotomyRequestForm::~RobotomyRequestForm(void) {
 }
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &rhs) {
-    if (this != &rhs) {
-
-    }
+    if (this != &rhs) { }
     return *this;
 }
 
 /* Functionnal */
-void RobotomyRequestForm::actionForm() {
+void RobotomyRequestForm::execute() {
     int randInt = rand() % 2;
 
     std::cout << '\a';

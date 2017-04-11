@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T19:36:43+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T15:25:53+02:00
+ * @Last modified time: 2017-04-11T15:39:33+02:00
  */
 
 #ifndef ROBOTOMYREQUESTFORM_HPP
@@ -10,8 +10,6 @@
 
 # include <iostream>
 # include "Form.hpp"
-
-// TODO Required grades : sign 72, exec 45
 
 class RobotomyRequestForm : public Form {
 
@@ -22,7 +20,7 @@ public:
     RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
 
     /* Functionnal */
-    virtual void actionForm();
+    virtual void execute();
 
 private:
     RobotomyRequestForm(void);

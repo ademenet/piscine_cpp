@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T11:48:57+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T15:21:56+02:00
+ * @Last modified time: 2017-04-11T15:36:03+02:00
  */
 
 #include "Bureaucrat.hpp"

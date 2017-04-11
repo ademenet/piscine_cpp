@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T19:36:43+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T15:25:36+02:00
+ * @Last modified time: 2017-04-11T15:39:29+02:00
  */
 
 #ifndef PRESIDENTIALPARDONFORM_HPP
@@ -10,7 +10,6 @@
 
 # include <iostream>
 # include "Form.hpp"
-
 
 class PresidentialPardonForm : public Form {
 
@@ -21,7 +20,7 @@ public:
     PresidentialPardonForm &operator=(PresidentialPardonForm const &rhs);
 
     /* Functionnal */
-    virtual void actionForm();
+    virtual void execute();
 
 private:
     PresidentialPardonForm(void);

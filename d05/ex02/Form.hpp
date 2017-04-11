@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T14:27:44+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T15:30:21+02:00
+ * @Last modified time: 2017-04-11T15:38:15+02:00
  */
 
 #ifndef FORM_HPP
@@ -51,7 +51,7 @@ public:
 
 protected:
     Form(void);
-    virtual void actionForm() = 0; // Abstract
+    virtual void execute() = 0; // Abstract
 
 private:
     const std::string _name;

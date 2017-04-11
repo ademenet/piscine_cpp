@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-10T19:36:43+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-11T15:26:33+02:00
+ * @Last modified time: 2017-04-11T15:39:37+02:00
  */
 
 #ifndef SHRUBBERYCREATIONFORM_HPP
@@ -10,8 +10,6 @@
 
 # include <iostream>
 # include "Form.hpp"
-
-// TODO Required grades : sign 145, exec 137
 
 class ShrubberyCreationForm : public Form {
 
@@ -22,7 +20,7 @@ public:
     ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
 
     /* Functionnal */
-    virtual void actionForm();
+    virtual void execute();
 
 private:
     ShrubberyCreationForm(void);
