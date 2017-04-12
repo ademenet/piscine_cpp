@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-12T16:27:07+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-12T17:28:23+02:00
+ * @Last modified time: 2017-04-12T17:35:23+02:00
  */
 
 #include <iostream>
@@ -20,19 +20,34 @@ void increment(T & c) {
 	std::cout << c << std::endl;
 }
 
-void decrement(int &c) {
+void decrementInt(int &c) {
+	c -= 1;
+	std::cout << c << std::endl;
+}
+
+void decrementChar(char &c) {
 	c -= 1;
 	std::cout << c << std::endl;
 }
 
 int main(void) {
-	int	test[3] = {1, 2, 3};
+	int		test1[3] = {1, 2, 3};
 	int		len = 3;
 
-	std::cout << "Array is init like: {1, 2, 3}" << std::endl;
+	std::cout << "-- Int Array is init like: {1, 2, 3}" << std::endl;
 	std::cout << "--- Call decrement" << std::endl;
-	iter<int>(test, len, &decrement);
+	iter<int>(test1, len, &decrementInt);
 	std::cout << "--- Call increment" << std::endl;
-	iter<int>(test, len, &increment);
+	iter<int>(test1, len, &increment);
+
+
+	char	test2[3] = {'c', 'd', 'e'};
+
+	std::cout << "-- Char Array is init like: {'c', 'd', 'e'}" << std::endl;
+	std::cout << "--- Call decrement" << std::endl;
+	iter<char>(test2, len, &decrementChar);
+	std::cout << "--- Call increment" << std::endl;
+	iter<char>(test2, len, &increment);
+
 	return 0;
 }
