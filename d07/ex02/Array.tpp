@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-12T18:01:32+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-13T14:18:50+02:00
+ * @Last modified time: 2017-04-13T14:27:43+02:00
  */
 
 #ifndef ARRAY_HPP
@@ -65,7 +65,6 @@ Array<T> &Array<T>::operator=(Array <T> const &rhs) {
 	if (this != &rhs) {
 		len = rhs.len;
 		for (unsigned int i = 0; i < len; i++) {
-			std::cout << rhs << std::endl;
 			array[i] = rhs.array[i];
 		}
 	}
