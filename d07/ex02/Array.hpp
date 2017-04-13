@@ -2,7 +2,7 @@
  * @Author: ademenet
  * @Date:   2017-04-12T18:01:32+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-12T19:19:34+02:00
+ * @Last modified time: 2017-04-13T11:40:42+02:00
  */
 
 #ifndef ARRAY_HPP
@@ -20,8 +20,9 @@ public:
     Array(Array <T> &);
     ~Array(void);
     Array<T> &operator=(Array <T> const &);
+	T &operator[](unsigned int index);
 
-	void size();
+	unsigned int size() const;
 
 private:
 	T 				*array;
