@@ -2,61 +2,10 @@
  * @Author: ademenet
  * @Date:   2017-04-12T18:02:05+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-13T11:59:06+02:00
+ * @Last modified time: 2017-04-13T14:20:07+02:00
  */
 
-#include "Array.hpp"
-
-/* Template declaration */
-template <class T>
-Array<T>::Array() {
-	array = new T;
-	len = 1;
-}
-
-template <class T>
-Array<T>::Array(unsigned int n) {
-	array = new T(n);
-	len = n;
-}
-
-template <class T>
-Array<T>::Array(Array <T> &src) {
-	*this = src;
-	return this;
-}
-
-template <class T>
-Array<T>::~Array(){
-	if (array != NULL) {
-		delete [] array;
-	}
-}
-
-template <class T>
-Array<T> &Array<T>::operator=(Array <T> const &rhs) {
-	if (this != &rhs) {
-		len = rhs.len;
-		for (unsigned int i = 0; i < len; i++) {
-			std::cout << rhs << std::endl;
-			array[i] = rhs.array[i];
-		}
-	}
-	return *this;
-}
-
-template <class T>
-T &Array<T>::operator[](unsigned int index) {
-	if (index >= len) {
-		throw std::exception();
-	}
-	return array[index];
-}
-
-template <class T>
-unsigned int Array<T>::size() const {
-	return len;
-}
+#include "Array.tpp"
 
 /* Test main */
 int main(void) {
@@ -73,7 +22,7 @@ int main(void) {
 		}
 	}
 	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
+		std::cout << "Error: " << e.what() << std::endl;
 	}
 
 	std::cout << "---- Test with int" << std::endl;
@@ -89,7 +38,7 @@ int main(void) {
 		}
 	}
 	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
+		std::cout << "Error: " << e.what() << std::endl;
 	}
 
 	std::cout << "---- Test error with int" << std::endl;
@@ -106,7 +55,7 @@ int main(void) {
 		}
 	}
 	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
+		std::cout << "Error: " << e.what() << std::endl;
 	}
 
 	std::cout << "---- Test with char" << std::endl;
@@ -120,7 +69,7 @@ int main(void) {
 		}
 	}
 	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
+		std::cout << "Error: " << e.what() << std::endl;
 	}
 
 	std::cout << "---- Test with char" << std::endl;
@@ -136,13 +85,13 @@ int main(void) {
 		}
 	}
 	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
+		std::cout << "Error: " << e.what() << std::endl;
 	}
 
 	std::cout << "---- Test error with char" << std::endl;
 	len = 3;
 	try {
-		Array<int> arrayCharSimple(len);
+		Array<char> arrayCharSimple(len);
 		arrayCharSimple[0] = 'd';
 		arrayCharSimple[1] = 'e';
 		arrayCharSimple[2] = 'f';
@@ -153,7 +102,54 @@ int main(void) {
 		}
 	}
 	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+
+	std::cout << "---- Test with string" << std::endl;
+	len = 3;
+	try {
+		Array<std::string> arrayStrSimple;
+		arrayStrSimple[0] = "Une seule cellule";
+		std::cout << "-- Test size: " << arrayStrSimple.size() << std::endl;
+		for (unsigned int i = 0; i < arrayStrSimple.size(); i++) {
+			std::cout << "- Test [" << i << "]: " << arrayStrSimple[i] << std::endl;
+		}
+	}
+	catch (std::exception &e) {
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+
+	std::cout << "---- Test with string" << std::endl;
+	len = 3;
+	try {
+		Array<std::string> arrayStrSimple(len);
+		arrayStrSimple[0] = "Une cellule";
+		arrayStrSimple[1] = "Deux cellules";
+		arrayStrSimple[2] = "Trois cellules";
+		std::cout << "-- Test size: " << arrayStrSimple.size() << std::endl;
+		for (unsigned int i = 0; i < arrayStrSimple.size(); i++) {
+			std::cout << "- Test [" << i << "]: " << arrayStrSimple[i] << std::endl;
+		}
+	}
+	catch (std::exception &e) {
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+
+	std::cout << "---- Test error with string" << std::endl;
+	len = 3;
+	try {
+		Array<std::string> arrayStrSimple(len);
+		arrayStrSimple[0] = "Une cellule";
+		arrayStrSimple[1] = "Deux cellules";
+		arrayStrSimple[2] = "Trois cellules";
+		arrayStrSimple[3] = "Quatre cellules";
+		std::cout << "-- Test size: " << arrayStrSimple.size() << std::endl;
+		for (unsigned int i = 0; i < arrayStrSimple.size(); i++) {
+			std::cout << "- Test [" << i << "]: " << arrayStrSimple[i] << std::endl;
+		}
+	}
+	catch (std::exception &e) {
+		std::cout << "Error: " << e.what() << std::endl;
 	}
 
 	return 0;
