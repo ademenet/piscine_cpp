@@ -2,13 +2,12 @@
  * @Author: ademenet
  * @Date:   2017-04-13T16:55:42+02:00
  * @Last modified by:   ademenet
- * @Last modified time: 2017-04-14T17:18:13+02:00
+ * @Last modified time: 2017-04-14T20:12:41+02:00
  */
 
 #ifndef SPAN_HPP
 # define SPAN_HPP
 
-# include <iostream>
 # include <set>
 
 class Span {
