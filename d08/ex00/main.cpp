@@ -8,9 +8,6 @@
 #include "easyfind.hpp"
 
 int main() {
-	// list
-	// array
-	// int array[4] = { 1, 2, 3, 4 };
 	std::cout << "--- Test with vectors" << std::endl;
 	std::vector<int> vec(4);
 	vec.push_back(10);
